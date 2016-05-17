@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Services
+Bundle-SymbolicName: mass.printer
+Bundle-Version: 1.0.0.qualifier
+Export-Package: mass.vp
+Require-Bundle: org.eclipse.emf.common,
+ org.polarsys.kitalpha.emde.model,
+ org.polarsys.capella.core.data.gen,
+ org.polarsys.capella.vp.mass.model
