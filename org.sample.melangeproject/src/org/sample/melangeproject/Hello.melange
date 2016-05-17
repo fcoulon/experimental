@@ -1,0 +1,10 @@
+package org.sample.melangeproject
+
+language Capella {
+	syntax "platform:/resource/org.polarsys.capella.core.data.def/model/CompositeStructure.ecore"
+	withGenmodel "platform:/resource/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel"
+}
+
+language CapellaWithMass inherits Capella{
+	with org.sample.k3project.Mass
+}
