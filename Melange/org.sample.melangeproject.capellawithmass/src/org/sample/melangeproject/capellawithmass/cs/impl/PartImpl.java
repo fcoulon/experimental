@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.sample.melangeproject.capellawithmass.capellacore.CapellacorePackage;
@@ -66,6 +67,46 @@ import org.sample.melangeproject.capellawithmass.modellingcore.ModellingcorePack
  */
 public class PartImpl extends AbstractInstanceImpl implements Part {
 	/**
+	 * The cached value of the '{@link #getDeployingLinks() <em>Deploying Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeployingLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstractDeploymentLink> deployingLinks;
+
+	/**
+	 * The cached value of the '{@link #getDeploymentLinks() <em>Deployment Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeploymentLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstractDeploymentLink> deploymentLinks;
+
+	/**
+	 * The cached value of the '{@link #getProvidedInterfaces() <em>Provided Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidedInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> providedInterfaces;
+
+	/**
+	 * The cached value of the '{@link #getRequiredInterfaces() <em>Required Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> requiredInterfaces;
+
+	/**
 	 * The cached value of the '{@link #getOwnedDeploymentLinks() <em>Owned Deployment Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +115,26 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 	 * @ordered
 	 */
 	protected EList<AbstractDeploymentLink> ownedDeploymentLinks;
+
+	/**
+	 * The cached value of the '{@link #getDeployedParts() <em>Deployed Parts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeployedParts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Part> deployedParts;
+
+	/**
+	 * The cached value of the '{@link #getDeployingParts() <em>Deploying Parts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeployingParts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Part> deployingParts;
 
 	/**
 	 * The cached value of the '{@link #getOwnedAbstractType() <em>Owned Abstract Type</em>}' containment reference.
@@ -229,11 +290,10 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 	 * @generated
 	 */
 	public EList<AbstractDeploymentLink> getDeployingLinks() {
-		// TODO: implement this method to return the 'Deploying Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (deployingLinks == null) {
+			deployingLinks = new EObjectResolvingEList<AbstractDeploymentLink>(AbstractDeploymentLink.class, this, CsPackage.PART__DEPLOYING_LINKS);
+		}
+		return deployingLinks;
 	}
 
 	/**
@@ -242,11 +302,10 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 	 * @generated
 	 */
 	public EList<AbstractDeploymentLink> getDeploymentLinks() {
-		// TODO: implement this method to return the 'Deployment Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (deploymentLinks == null) {
+			deploymentLinks = new EObjectResolvingEList<AbstractDeploymentLink>(AbstractDeploymentLink.class, this, CsPackage.PART__DEPLOYMENT_LINKS);
+		}
+		return deploymentLinks;
 	}
 
 	/**
@@ -268,11 +327,10 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 	 * @generated
 	 */
 	public EList<Interface> getProvidedInterfaces() {
-		// TODO: implement this method to return the 'Provided Interfaces' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (providedInterfaces == null) {
+			providedInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, CsPackage.PART__PROVIDED_INTERFACES);
+		}
+		return providedInterfaces;
 	}
 
 	/**
@@ -281,11 +339,10 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 	 * @generated
 	 */
 	public EList<Interface> getRequiredInterfaces() {
-		// TODO: implement this method to return the 'Required Interfaces' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (requiredInterfaces == null) {
+			requiredInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, CsPackage.PART__REQUIRED_INTERFACES);
+		}
+		return requiredInterfaces;
 	}
 
 	/**
@@ -306,11 +363,10 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 	 * @generated
 	 */
 	public EList<Part> getDeployedParts() {
-		// TODO: implement this method to return the 'Deployed Parts' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (deployedParts == null) {
+			deployedParts = new EObjectResolvingEList<Part>(Part.class, this, CsPackage.PART__DEPLOYED_PARTS);
+		}
+		return deployedParts;
 	}
 
 	/**
@@ -319,11 +375,10 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 	 * @generated
 	 */
 	public EList<Part> getDeployingParts() {
-		// TODO: implement this method to return the 'Deploying Parts' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (deployingParts == null) {
+			deployingParts = new EObjectResolvingEList<Part>(Part.class, this, CsPackage.PART__DEPLOYING_PARTS);
+		}
+		return deployingParts;
 	}
 
 	/**
@@ -634,21 +689,21 @@ public class PartImpl extends AbstractInstanceImpl implements Part {
 			case CsPackage.PART__INFORMATION_FLOWS:
 				return !getInformationFlows().isEmpty();
 			case CsPackage.PART__DEPLOYING_LINKS:
-				return !getDeployingLinks().isEmpty();
+				return deployingLinks != null && !deployingLinks.isEmpty();
 			case CsPackage.PART__DEPLOYMENT_LINKS:
-				return !getDeploymentLinks().isEmpty();
+				return deploymentLinks != null && !deploymentLinks.isEmpty();
 			case CsPackage.PART__INVOLVING_INVOLVEMENTS:
 				return !getInvolvingInvolvements().isEmpty();
 			case CsPackage.PART__PROVIDED_INTERFACES:
-				return !getProvidedInterfaces().isEmpty();
+				return providedInterfaces != null && !providedInterfaces.isEmpty();
 			case CsPackage.PART__REQUIRED_INTERFACES:
-				return !getRequiredInterfaces().isEmpty();
+				return requiredInterfaces != null && !requiredInterfaces.isEmpty();
 			case CsPackage.PART__OWNED_DEPLOYMENT_LINKS:
 				return ownedDeploymentLinks != null && !ownedDeploymentLinks.isEmpty();
 			case CsPackage.PART__DEPLOYED_PARTS:
-				return !getDeployedParts().isEmpty();
+				return deployedParts != null && !deployedParts.isEmpty();
 			case CsPackage.PART__DEPLOYING_PARTS:
-				return !getDeployingParts().isEmpty();
+				return deployingParts != null && !deployingParts.isEmpty();
 			case CsPackage.PART__OWNED_ABSTRACT_TYPE:
 				return ownedAbstractType != null;
 			case CsPackage.PART__VALUE:

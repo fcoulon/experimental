@@ -38,7 +38,7 @@ public interface DeploymentTarget extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Deployment Links</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getDeploymentTarget_DeploymentLinks()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/UML2Mapping featureName='clientDependency' featureOwner='NamedElement'"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='deployments'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='the list of deployment specifications involving this physical target as the destination of the deployment\r\n[source: Capella study]' constraints='none' comment/notes='none'"

@@ -124,6 +124,16 @@ public class PhysicalPortImpl extends AbstractInstanceImpl implements PhysicalPo
 	protected EList<PortAllocation> ownedPortAllocations;
 
 	/**
+	 * The cached value of the '{@link #getInvolvedLinks() <em>Involved Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvolvedLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalLink> involvedLinks;
+
+	/**
 	 * The cached value of the '{@link #getOwnedComponentPortAllocations() <em>Owned Component Port Allocations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -142,6 +152,26 @@ public class PhysicalPortImpl extends AbstractInstanceImpl implements PhysicalPo
 	 * @ordered
 	 */
 	protected EList<PhysicalPortRealization> ownedPhysicalPortRealizations;
+
+	/**
+	 * The cached value of the '{@link #getRealizedPhysicalPorts() <em>Realized Physical Ports</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRealizedPhysicalPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalPort> realizedPhysicalPorts;
+
+	/**
+	 * The cached value of the '{@link #getRealizingPhysicalPorts() <em>Realizing Physical Ports</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRealizingPhysicalPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalPort> realizingPhysicalPorts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -332,11 +362,10 @@ public class PhysicalPortImpl extends AbstractInstanceImpl implements PhysicalPo
 	 * @generated
 	 */
 	public EList<PhysicalLink> getInvolvedLinks() {
-		// TODO: implement this method to return the 'Involved Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (involvedLinks == null) {
+			involvedLinks = new EObjectResolvingEList<PhysicalLink>(PhysicalLink.class, this, CsPackage.PHYSICAL_PORT__INVOLVED_LINKS);
+		}
+		return involvedLinks;
 	}
 
 	/**
@@ -382,11 +411,10 @@ public class PhysicalPortImpl extends AbstractInstanceImpl implements PhysicalPo
 	 * @generated
 	 */
 	public EList<PhysicalPort> getRealizedPhysicalPorts() {
-		// TODO: implement this method to return the 'Realized Physical Ports' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (realizedPhysicalPorts == null) {
+			realizedPhysicalPorts = new EObjectResolvingEList<PhysicalPort>(PhysicalPort.class, this, CsPackage.PHYSICAL_PORT__REALIZED_PHYSICAL_PORTS);
+		}
+		return realizedPhysicalPorts;
 	}
 
 	/**
@@ -395,11 +423,10 @@ public class PhysicalPortImpl extends AbstractInstanceImpl implements PhysicalPo
 	 * @generated
 	 */
 	public EList<PhysicalPort> getRealizingPhysicalPorts() {
-		// TODO: implement this method to return the 'Realizing Physical Ports' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (realizingPhysicalPorts == null) {
+			realizingPhysicalPorts = new EObjectResolvingEList<PhysicalPort>(PhysicalPort.class, this, CsPackage.PHYSICAL_PORT__REALIZING_PHYSICAL_PORTS);
+		}
+		return realizingPhysicalPorts;
 	}
 
 	/**
@@ -583,7 +610,7 @@ public class PhysicalPortImpl extends AbstractInstanceImpl implements PhysicalPo
 			case CsPackage.PHYSICAL_PORT__INFORMATION_FLOWS:
 				return !getInformationFlows().isEmpty();
 			case CsPackage.PHYSICAL_PORT__INVOLVED_LINKS:
-				return !getInvolvedLinks().isEmpty();
+				return involvedLinks != null && !involvedLinks.isEmpty();
 			case CsPackage.PHYSICAL_PORT__OWNED_COMPONENT_PORT_ALLOCATIONS:
 				return ownedComponentPortAllocations != null && !ownedComponentPortAllocations.isEmpty();
 			case CsPackage.PHYSICAL_PORT__OWNED_PHYSICAL_PORT_REALIZATIONS:
@@ -591,9 +618,9 @@ public class PhysicalPortImpl extends AbstractInstanceImpl implements PhysicalPo
 			case CsPackage.PHYSICAL_PORT__ALLOCATED_COMPONENT_PORTS:
 				return !getAllocatedComponentPorts().isEmpty();
 			case CsPackage.PHYSICAL_PORT__REALIZED_PHYSICAL_PORTS:
-				return !getRealizedPhysicalPorts().isEmpty();
+				return realizedPhysicalPorts != null && !realizedPhysicalPorts.isEmpty();
 			case CsPackage.PHYSICAL_PORT__REALIZING_PHYSICAL_PORTS:
-				return !getRealizingPhysicalPorts().isEmpty();
+				return realizingPhysicalPorts != null && !realizingPhysicalPorts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

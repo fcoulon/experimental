@@ -142,6 +142,16 @@ public class ExchangeItemAllocationImpl extends RelationshipImpl implements Exch
 	protected ExchangeItem allocatedItem;
 
 	/**
+	 * The cached value of the '{@link #getAllocatingInterface() <em>Allocating Interface</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatingInterface()
+	 * @generated
+	 * @ordered
+	 */
+	protected Interface allocatingInterface;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -301,8 +311,15 @@ public class ExchangeItemAllocationImpl extends RelationshipImpl implements Exch
 	 * @generated
 	 */
 	public Interface getAllocatingInterface() {
-		Interface allocatingInterface = basicGetAllocatingInterface();
-		return allocatingInterface != null && allocatingInterface.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)allocatingInterface) : allocatingInterface;
+		if (allocatingInterface != null && allocatingInterface.eIsProxy()) {
+			InternalEObject oldAllocatingInterface = (InternalEObject)allocatingInterface;
+			allocatingInterface = (Interface)eResolveProxy(oldAllocatingInterface);
+			if (allocatingInterface != oldAllocatingInterface) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.EXCHANGE_ITEM_ALLOCATION__ALLOCATING_INTERFACE, oldAllocatingInterface, allocatingInterface));
+			}
+		}
+		return allocatingInterface;
 	}
 
 	/**
@@ -311,10 +328,7 @@ public class ExchangeItemAllocationImpl extends RelationshipImpl implements Exch
 	 * @generated
 	 */
 	public Interface basicGetAllocatingInterface() {
-		// TODO: implement this method to return the 'Allocating Interface' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return allocatingInterface;
 	}
 
 	/**
@@ -420,7 +434,7 @@ public class ExchangeItemAllocationImpl extends RelationshipImpl implements Exch
 			case CsPackage.EXCHANGE_ITEM_ALLOCATION__ALLOCATED_ITEM:
 				return allocatedItem != null;
 			case CsPackage.EXCHANGE_ITEM_ALLOCATION__ALLOCATING_INTERFACE:
-				return basicGetAllocatingInterface() != null;
+				return allocatingInterface != null;
 		}
 		return super.eIsSet(featureID);
 	}

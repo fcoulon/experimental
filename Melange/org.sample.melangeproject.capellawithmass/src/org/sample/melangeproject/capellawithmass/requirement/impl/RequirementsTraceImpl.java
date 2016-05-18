@@ -27,26 +27,6 @@ import org.sample.melangeproject.capellawithmass.requirement.RequirementsTrace;
  */
 public class RequirementsTraceImpl extends TraceImpl implements RequirementsTrace {
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected TraceableElement source;
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected TraceableElement target;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -71,7 +51,9 @@ public class RequirementsTraceImpl extends TraceImpl implements RequirementsTrac
 	 * @generated
 	 */
 	public TraceableElement getSource() {
-		return source;
+		// TODO: implement this method to return the 'Source' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -80,7 +62,9 @@ public class RequirementsTraceImpl extends TraceImpl implements RequirementsTrac
 	 * @generated
 	 */
 	public TraceableElement getTarget() {
-		return target;
+		// TODO: implement this method to return the 'Target' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -108,9 +92,9 @@ public class RequirementsTraceImpl extends TraceImpl implements RequirementsTrac
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RequirementPackage.REQUIREMENTS_TRACE__SOURCE:
-				return source != null;
+				return getSource() != null;
 			case RequirementPackage.REQUIREMENTS_TRACE__TARGET:
-				return target != null;
+				return getTarget() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import org.sample.melangeproject.capellawithmass.capellacore.impl.NamedElementImpl;
 
 import org.sample.melangeproject.capellawithmass.cs.AbstractDeploymentLink;
@@ -26,6 +28,16 @@ import org.sample.melangeproject.capellawithmass.cs.DeployableElement;
  * @generated
  */
 public abstract class DeployableElementImpl extends NamedElementImpl implements DeployableElement {
+	/**
+	 * The cached value of the '{@link #getDeployingLinks() <em>Deploying Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeployingLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstractDeploymentLink> deployingLinks;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,11 +63,10 @@ public abstract class DeployableElementImpl extends NamedElementImpl implements 
 	 * @generated
 	 */
 	public EList<AbstractDeploymentLink> getDeployingLinks() {
-		// TODO: implement this method to return the 'Deploying Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (deployingLinks == null) {
+			deployingLinks = new EObjectResolvingEList<AbstractDeploymentLink>(AbstractDeploymentLink.class, this, CsPackage.DEPLOYABLE_ELEMENT__DEPLOYING_LINKS);
+		}
+		return deployingLinks;
 	}
 
 	/**
@@ -81,7 +92,7 @@ public abstract class DeployableElementImpl extends NamedElementImpl implements 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CsPackage.DEPLOYABLE_ELEMENT__DEPLOYING_LINKS:
-				return !getDeployingLinks().isEmpty();
+				return deployingLinks != null && !deployingLinks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

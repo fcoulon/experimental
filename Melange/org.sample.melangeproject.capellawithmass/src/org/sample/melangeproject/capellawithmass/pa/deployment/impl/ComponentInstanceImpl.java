@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.sample.melangeproject.capellawithmass.capellacore.NamedElement;
@@ -74,6 +75,26 @@ public class ComponentInstanceImpl extends AbstractPhysicalInstanceImpl implemen
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDeployingLinks() <em>Deploying Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeployingLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstractDeploymentLink> deployingLinks;
+
+	/**
+	 * The cached value of the '{@link #getDeploymentLinks() <em>Deployment Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeploymentLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbstractDeploymentLink> deploymentLinks;
 
 	/**
 	 * The cached value of the '{@link #getOwnedAbstractPhysicalInstances() <em>Owned Abstract Physical Instances</em>}' containment reference list.
@@ -151,11 +172,10 @@ public class ComponentInstanceImpl extends AbstractPhysicalInstanceImpl implemen
 	 * @generated
 	 */
 	public EList<AbstractDeploymentLink> getDeployingLinks() {
-		// TODO: implement this method to return the 'Deploying Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (deployingLinks == null) {
+			deployingLinks = new EObjectResolvingEList<AbstractDeploymentLink>(AbstractDeploymentLink.class, this, DeploymentPackage.COMPONENT_INSTANCE__DEPLOYING_LINKS);
+		}
+		return deployingLinks;
 	}
 
 	/**
@@ -164,11 +184,10 @@ public class ComponentInstanceImpl extends AbstractPhysicalInstanceImpl implemen
 	 * @generated
 	 */
 	public EList<AbstractDeploymentLink> getDeploymentLinks() {
-		// TODO: implement this method to return the 'Deployment Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (deploymentLinks == null) {
+			deploymentLinks = new EObjectResolvingEList<AbstractDeploymentLink>(AbstractDeploymentLink.class, this, DeploymentPackage.COMPONENT_INSTANCE__DEPLOYMENT_LINKS);
+		}
+		return deploymentLinks;
 	}
 
 	/**
@@ -351,9 +370,9 @@ public class ComponentInstanceImpl extends AbstractPhysicalInstanceImpl implemen
 			case DeploymentPackage.COMPONENT_INSTANCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DeploymentPackage.COMPONENT_INSTANCE__DEPLOYING_LINKS:
-				return !getDeployingLinks().isEmpty();
+				return deployingLinks != null && !deployingLinks.isEmpty();
 			case DeploymentPackage.COMPONENT_INSTANCE__DEPLOYMENT_LINKS:
-				return !getDeploymentLinks().isEmpty();
+				return deploymentLinks != null && !deploymentLinks.isEmpty();
 			case DeploymentPackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return !getPortInstances().isEmpty();
 			case DeploymentPackage.COMPONENT_INSTANCE__OWNED_ABSTRACT_PHYSICAL_INSTANCES:

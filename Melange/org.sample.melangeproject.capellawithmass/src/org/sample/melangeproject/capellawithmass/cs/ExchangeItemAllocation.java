@@ -129,7 +129,7 @@ public interface ExchangeItemAllocation extends Relationship, AbstractEventOpera
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocating Interface</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getExchangeItemAllocation_AllocatingInterface()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='the interface that allocated the given exchange item' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated

@@ -40,7 +40,7 @@ public interface AbstractPhysicalArtifact extends CapellaElement {
 	 * @return the value of the '<em>Allocator Configuration Items</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getAbstractPhysicalArtifact_AllocatorConfigurationItems()
 	 * @see org.sample.melangeproject.capellawithmass.epbs.ConfigurationItem#getAllocatedPhysicalArtifacts
-	 * @model opposite="allocatedPhysicalArtifacts" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="allocatedPhysicalArtifacts" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated

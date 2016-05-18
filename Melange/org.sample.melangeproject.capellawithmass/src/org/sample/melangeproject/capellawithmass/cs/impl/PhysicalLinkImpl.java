@@ -4,12 +4,15 @@ package org.sample.melangeproject.capellawithmass.cs.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -107,6 +110,46 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 	 * @ordered
 	 */
 	protected EList<PhysicalLinkCategory> categories;
+
+	/**
+	 * The cached value of the '{@link #getSourcePhysicalPort() <em>Source Physical Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourcePhysicalPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected PhysicalPort sourcePhysicalPort;
+
+	/**
+	 * The cached value of the '{@link #getTargetPhysicalPort() <em>Target Physical Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetPhysicalPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected PhysicalPort targetPhysicalPort;
+
+	/**
+	 * The cached value of the '{@link #getRealizedPhysicalLinks() <em>Realized Physical Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRealizedPhysicalLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalLink> realizedPhysicalLinks;
+
+	/**
+	 * The cached value of the '{@link #getRealizingPhysicalLinks() <em>Realizing Physical Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRealizingPhysicalLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalLink> realizingPhysicalLinks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,8 +262,15 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 	 * @generated
 	 */
 	public PhysicalPort getSourcePhysicalPort() {
-		PhysicalPort sourcePhysicalPort = basicGetSourcePhysicalPort();
-		return sourcePhysicalPort != null && sourcePhysicalPort.eIsProxy() ? (PhysicalPort)eResolveProxy((InternalEObject)sourcePhysicalPort) : sourcePhysicalPort;
+		if (sourcePhysicalPort != null && sourcePhysicalPort.eIsProxy()) {
+			InternalEObject oldSourcePhysicalPort = (InternalEObject)sourcePhysicalPort;
+			sourcePhysicalPort = (PhysicalPort)eResolveProxy(oldSourcePhysicalPort);
+			if (sourcePhysicalPort != oldSourcePhysicalPort) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.PHYSICAL_LINK__SOURCE_PHYSICAL_PORT, oldSourcePhysicalPort, sourcePhysicalPort));
+			}
+		}
+		return sourcePhysicalPort;
 	}
 
 	/**
@@ -229,10 +279,7 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 	 * @generated
 	 */
 	public PhysicalPort basicGetSourcePhysicalPort() {
-		// TODO: implement this method to return the 'Source Physical Port' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return sourcePhysicalPort;
 	}
 
 	/**
@@ -241,8 +288,15 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 	 * @generated
 	 */
 	public PhysicalPort getTargetPhysicalPort() {
-		PhysicalPort targetPhysicalPort = basicGetTargetPhysicalPort();
-		return targetPhysicalPort != null && targetPhysicalPort.eIsProxy() ? (PhysicalPort)eResolveProxy((InternalEObject)targetPhysicalPort) : targetPhysicalPort;
+		if (targetPhysicalPort != null && targetPhysicalPort.eIsProxy()) {
+			InternalEObject oldTargetPhysicalPort = (InternalEObject)targetPhysicalPort;
+			targetPhysicalPort = (PhysicalPort)eResolveProxy(oldTargetPhysicalPort);
+			if (targetPhysicalPort != oldTargetPhysicalPort) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.PHYSICAL_LINK__TARGET_PHYSICAL_PORT, oldTargetPhysicalPort, targetPhysicalPort));
+			}
+		}
+		return targetPhysicalPort;
 	}
 
 	/**
@@ -251,10 +305,7 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 	 * @generated
 	 */
 	public PhysicalPort basicGetTargetPhysicalPort() {
-		// TODO: implement this method to return the 'Target Physical Port' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return targetPhysicalPort;
 	}
 
 	/**
@@ -263,11 +314,10 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 	 * @generated
 	 */
 	public EList<PhysicalLink> getRealizedPhysicalLinks() {
-		// TODO: implement this method to return the 'Realized Physical Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (realizedPhysicalLinks == null) {
+			realizedPhysicalLinks = new EObjectResolvingEList<PhysicalLink>(PhysicalLink.class, this, CsPackage.PHYSICAL_LINK__REALIZED_PHYSICAL_LINKS);
+		}
+		return realizedPhysicalLinks;
 	}
 
 	/**
@@ -276,11 +326,10 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 	 * @generated
 	 */
 	public EList<PhysicalLink> getRealizingPhysicalLinks() {
-		// TODO: implement this method to return the 'Realizing Physical Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (realizingPhysicalLinks == null) {
+			realizingPhysicalLinks = new EObjectResolvingEList<PhysicalLink>(PhysicalLink.class, this, CsPackage.PHYSICAL_LINK__REALIZING_PHYSICAL_LINKS);
+		}
+		return realizingPhysicalLinks;
 	}
 
 	/**
@@ -437,13 +486,13 @@ public class PhysicalLinkImpl extends AbstractPhysicalPathLinkImpl implements Ph
 			case CsPackage.PHYSICAL_LINK__CATEGORIES:
 				return categories != null && !categories.isEmpty();
 			case CsPackage.PHYSICAL_LINK__SOURCE_PHYSICAL_PORT:
-				return basicGetSourcePhysicalPort() != null;
+				return sourcePhysicalPort != null;
 			case CsPackage.PHYSICAL_LINK__TARGET_PHYSICAL_PORT:
-				return basicGetTargetPhysicalPort() != null;
+				return targetPhysicalPort != null;
 			case CsPackage.PHYSICAL_LINK__REALIZED_PHYSICAL_LINKS:
-				return !getRealizedPhysicalLinks().isEmpty();
+				return realizedPhysicalLinks != null && !realizedPhysicalLinks.isEmpty();
 			case CsPackage.PHYSICAL_LINK__REALIZING_PHYSICAL_LINKS:
-				return !getRealizingPhysicalLinks().isEmpty();
+				return realizingPhysicalLinks != null && !realizingPhysicalLinks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

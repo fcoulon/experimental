@@ -3,6 +3,7 @@
 package org.sample.melangeproject.capellawithmass.cs.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -31,6 +32,16 @@ import org.sample.melangeproject.capellawithmass.cs.InterfaceImplementation;
  * @generated
  */
 public class InterfaceImplementationImpl extends RelationshipImpl implements InterfaceImplementation {
+	/**
+	 * The cached value of the '{@link #getInterfaceImplementor() <em>Interface Implementor</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceImplementor()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component interfaceImplementor;
+
 	/**
 	 * The cached value of the '{@link #getImplementedInterface() <em>Implemented Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -66,8 +77,15 @@ public class InterfaceImplementationImpl extends RelationshipImpl implements Int
 	 * @generated
 	 */
 	public Component getInterfaceImplementor() {
-		Component interfaceImplementor = basicGetInterfaceImplementor();
-		return interfaceImplementor != null && interfaceImplementor.eIsProxy() ? (Component)eResolveProxy((InternalEObject)interfaceImplementor) : interfaceImplementor;
+		if (interfaceImplementor != null && interfaceImplementor.eIsProxy()) {
+			InternalEObject oldInterfaceImplementor = (InternalEObject)interfaceImplementor;
+			interfaceImplementor = (Component)eResolveProxy(oldInterfaceImplementor);
+			if (interfaceImplementor != oldInterfaceImplementor) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.INTERFACE_IMPLEMENTATION__INTERFACE_IMPLEMENTOR, oldInterfaceImplementor, interfaceImplementor));
+			}
+		}
+		return interfaceImplementor;
 	}
 
 	/**
@@ -76,10 +94,22 @@ public class InterfaceImplementationImpl extends RelationshipImpl implements Int
 	 * @generated
 	 */
 	public Component basicGetInterfaceImplementor() {
-		// TODO: implement this method to return the 'Interface Implementor' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return interfaceImplementor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInterfaceImplementor(Component newInterfaceImplementor, NotificationChain msgs) {
+		Component oldInterfaceImplementor = interfaceImplementor;
+		interfaceImplementor = newInterfaceImplementor;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CsPackage.INTERFACE_IMPLEMENTATION__INTERFACE_IMPLEMENTOR, oldInterfaceImplementor, newInterfaceImplementor);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -118,6 +148,36 @@ public class InterfaceImplementationImpl extends RelationshipImpl implements Int
 		implementedInterface = newImplementedInterface;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.INTERFACE_IMPLEMENTATION__IMPLEMENTED_INTERFACE, oldImplementedInterface, implementedInterface));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.INTERFACE_IMPLEMENTATION__INTERFACE_IMPLEMENTOR:
+				if (interfaceImplementor != null)
+					msgs = ((InternalEObject)interfaceImplementor).eInverseRemove(this, CsPackage.COMPONENT__IMPLEMENTED_INTERFACE_LINKS, Component.class, msgs);
+				return basicSetInterfaceImplementor((Component)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.INTERFACE_IMPLEMENTATION__INTERFACE_IMPLEMENTOR:
+				return basicSetInterfaceImplementor(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -177,7 +237,7 @@ public class InterfaceImplementationImpl extends RelationshipImpl implements Int
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CsPackage.INTERFACE_IMPLEMENTATION__INTERFACE_IMPLEMENTOR:
-				return basicGetInterfaceImplementor() != null;
+				return interfaceImplementor != null;
 			case CsPackage.INTERFACE_IMPLEMENTATION__IMPLEMENTED_INTERFACE:
 				return implementedInterface != null;
 		}

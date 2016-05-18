@@ -163,7 +163,7 @@ public interface BlockArchitecture extends AbstractFunctionalArchitecture {
 	 * @return the value of the '<em>Provisioned Architecture Allocations</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getBlockArchitecture_ProvisionedArchitectureAllocations()
 	 * @see org.sample.melangeproject.capellawithmass.cs.ArchitectureAllocation#getAllocatingArchitecture
-	 * @model opposite="allocatingArchitecture" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="allocatingArchitecture" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) list of allocation links to other architectures\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -183,7 +183,7 @@ public interface BlockArchitecture extends AbstractFunctionalArchitecture {
 	 * @return the value of the '<em>Provisioning Architecture Allocations</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getBlockArchitecture_ProvisioningArchitectureAllocations()
 	 * @see org.sample.melangeproject.capellawithmass.cs.ArchitectureAllocation#getAllocatedArchitecture
-	 * @model opposite="allocatedArchitecture" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="allocatedArchitecture" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) list of allocation links from other architectures to this one\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -201,7 +201,7 @@ public interface BlockArchitecture extends AbstractFunctionalArchitecture {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocated Architectures</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getBlockArchitecture_AllocatedArchitectures()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to the BlockArchitectures that are allocated from this one\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -219,7 +219,7 @@ public interface BlockArchitecture extends AbstractFunctionalArchitecture {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocating Architectures</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getBlockArchitecture_AllocatingArchitectures()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to BlockArchitectures that allocate to this architecture\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated

@@ -3,6 +3,7 @@
 package org.sample.melangeproject.capellawithmass.cs.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -31,6 +32,16 @@ import org.sample.melangeproject.capellawithmass.cs.InterfaceUse;
  * @generated
  */
 public class InterfaceUseImpl extends RelationshipImpl implements InterfaceUse {
+	/**
+	 * The cached value of the '{@link #getInterfaceUser() <em>Interface User</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceUser()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component interfaceUser;
+
 	/**
 	 * The cached value of the '{@link #getUsedInterface() <em>Used Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -66,8 +77,15 @@ public class InterfaceUseImpl extends RelationshipImpl implements InterfaceUse {
 	 * @generated
 	 */
 	public Component getInterfaceUser() {
-		Component interfaceUser = basicGetInterfaceUser();
-		return interfaceUser != null && interfaceUser.eIsProxy() ? (Component)eResolveProxy((InternalEObject)interfaceUser) : interfaceUser;
+		if (interfaceUser != null && interfaceUser.eIsProxy()) {
+			InternalEObject oldInterfaceUser = (InternalEObject)interfaceUser;
+			interfaceUser = (Component)eResolveProxy(oldInterfaceUser);
+			if (interfaceUser != oldInterfaceUser) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.INTERFACE_USE__INTERFACE_USER, oldInterfaceUser, interfaceUser));
+			}
+		}
+		return interfaceUser;
 	}
 
 	/**
@@ -76,10 +94,22 @@ public class InterfaceUseImpl extends RelationshipImpl implements InterfaceUse {
 	 * @generated
 	 */
 	public Component basicGetInterfaceUser() {
-		// TODO: implement this method to return the 'Interface User' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return interfaceUser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInterfaceUser(Component newInterfaceUser, NotificationChain msgs) {
+		Component oldInterfaceUser = interfaceUser;
+		interfaceUser = newInterfaceUser;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CsPackage.INTERFACE_USE__INTERFACE_USER, oldInterfaceUser, newInterfaceUser);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -118,6 +148,36 @@ public class InterfaceUseImpl extends RelationshipImpl implements InterfaceUse {
 		usedInterface = newUsedInterface;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.INTERFACE_USE__USED_INTERFACE, oldUsedInterface, usedInterface));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.INTERFACE_USE__INTERFACE_USER:
+				if (interfaceUser != null)
+					msgs = ((InternalEObject)interfaceUser).eInverseRemove(this, CsPackage.COMPONENT__USED_INTERFACE_LINKS, Component.class, msgs);
+				return basicSetInterfaceUser((Component)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.INTERFACE_USE__INTERFACE_USER:
+				return basicSetInterfaceUser(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -177,7 +237,7 @@ public class InterfaceUseImpl extends RelationshipImpl implements InterfaceUse {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CsPackage.INTERFACE_USE__INTERFACE_USER:
-				return basicGetInterfaceUser() != null;
+				return interfaceUser != null;
 			case CsPackage.INTERFACE_USE__USED_INTERFACE:
 				return usedInterface != null;
 		}

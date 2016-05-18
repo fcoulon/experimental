@@ -117,7 +117,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * @return the value of the '<em>Implementor Components</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_ImplementorComponents()
 	 * @see org.sample.melangeproject.capellawithmass.cs.Component#getImplementedInterfaces
-	 * @model opposite="implementedInterfaces" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="implementedInterfaces" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='implementorComponents'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='references to the components that implement this interface\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -139,7 +139,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * @return the value of the '<em>User Components</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_UserComponents()
 	 * @see org.sample.melangeproject.capellawithmass.cs.Component#getUsedInterfaces
-	 * @model opposite="usedInterfaces" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="usedInterfaces" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='userComponents'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='references to the components that use this interface\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -159,7 +159,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Implementations</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_InterfaceImplementations()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='interfaceImplementations'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='references to the InterfaceImplementation elements, that act as mediators between this interface and its implementers\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Opposite reference of uml::InterfaceRealization::contract' constraints='uml::Element::ownedElement elements on which InterfaceImplementation stereotype or any stereotype that inherits from it is applied\r\nOrder must be computed'"
@@ -179,7 +179,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Uses</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_InterfaceUses()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='interfaceUses'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='references to the InterfaceUse elements, that act as mediator classes between this interface and its users\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Opposite reference of uml::Dependency::supplier' constraints='uml::Element::ownedElement elements on which InterfaceUse stereotype or any stereotype that inherits from it is applied\r\nOrder must be computed'"
@@ -201,7 +201,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * @return the value of the '<em>Provisioning Interface Allocations</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_ProvisioningInterfaceAllocations()
 	 * @see org.sample.melangeproject.capellawithmass.cs.InterfaceAllocation#getAllocatedInterface
-	 * @model opposite="allocatedInterface" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="allocatedInterface" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='References to the InterfaceAllocation elements, acting as mediator classes between the interface and the elements to which/from which it is allocated\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -219,7 +219,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocating Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_AllocatingInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='References to the Interfaces that declare an allocation link to this Interface\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -237,7 +237,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocating Components</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_AllocatingComponents()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='References to the components that declare an allocation link to this Interface\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -255,7 +255,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Exchange Items</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_ExchangeItems()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='References to all exchange items allocated by the interface' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
@@ -292,7 +292,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requiring Components</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_RequiringComponents()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -310,7 +310,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requiring Component Ports</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_RequiringComponentPorts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -328,7 +328,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Providing Components</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_ProvidingComponents()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -346,7 +346,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Providing Component Ports</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_ProvidingComponentPorts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -364,7 +364,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realizing Logical Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_RealizingLogicalInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -382,7 +382,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realized Context Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_RealizedContextInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */
@@ -399,7 +399,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realizing Physical Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_RealizingPhysicalInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -417,7 +417,7 @@ public interface Interface extends GeneralClass, InterfaceAllocator {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realized Logical Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterface_RealizedLogicalInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */

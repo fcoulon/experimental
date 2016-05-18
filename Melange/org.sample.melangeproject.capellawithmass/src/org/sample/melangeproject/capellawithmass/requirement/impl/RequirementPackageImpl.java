@@ -25,6 +25,10 @@ import org.sample.melangeproject.capellawithmass.capellacore.CapellacorePackage;
 
 import org.sample.melangeproject.capellawithmass.capellacore.impl.CapellacorePackageImpl;
 
+import org.sample.melangeproject.capellawithmass.capellamodeller.CapellamodellerPackage;
+
+import org.sample.melangeproject.capellawithmass.capellamodeller.impl.CapellamodellerPackageImpl;
+
 import org.sample.melangeproject.capellawithmass.cs.CsPackage;
 
 import org.sample.melangeproject.capellawithmass.cs.impl.CsPackageImpl;
@@ -95,6 +99,10 @@ import org.sample.melangeproject.capellawithmass.requirement.SystemFunctionalReq
 import org.sample.melangeproject.capellawithmass.requirement.SystemNonFunctionalInterfaceRequirement;
 import org.sample.melangeproject.capellawithmass.requirement.SystemNonFunctionalRequirement;
 import org.sample.melangeproject.capellawithmass.requirement.SystemUserRequirement;
+
+import org.sample.melangeproject.capellawithmass.sharedmodel.SharedmodelPackage;
+
+import org.sample.melangeproject.capellawithmass.sharedmodel.impl.SharedmodelPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -206,69 +214,75 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		EpbsPackageImpl theEpbsPackage = (EpbsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EpbsPackage.eNS_URI) instanceof EpbsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EpbsPackage.eNS_URI) : EpbsPackage.eINSTANCE);
-		CtxPackageImpl theCtxPackage = (CtxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) instanceof CtxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) : CtxPackage.eINSTANCE);
-		PaPackageImpl thePaPackage = (PaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) instanceof PaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) : PaPackage.eINSTANCE);
-		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
-		LaPackageImpl theLaPackage = (LaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) instanceof LaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) : LaPackage.eINSTANCE);
-		EmdePackageImpl theEmdePackage = (EmdePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI) instanceof EmdePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI) : EmdePackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		OaPackageImpl theOaPackage = (OaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) instanceof OaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) : OaPackage.eINSTANCE);
 		CsPackageImpl theCsPackage = (CsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CsPackage.eNS_URI) instanceof CsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CsPackage.eNS_URI) : CsPackage.eINSTANCE);
-		CapellacorePackageImpl theCapellacorePackage = (CapellacorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) instanceof CapellacorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) : CapellacorePackage.eINSTANCE);
-		InteractionPackageImpl theInteractionPackage = (InteractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) instanceof InteractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) : InteractionPackage.eINSTANCE);
+		EpbsPackageImpl theEpbsPackage = (EpbsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EpbsPackage.eNS_URI) instanceof EpbsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EpbsPackage.eNS_URI) : EpbsPackage.eINSTANCE);
+		CapellamodellerPackageImpl theCapellamodellerPackage = (CapellamodellerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellamodellerPackage.eNS_URI) instanceof CapellamodellerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellamodellerPackage.eNS_URI) : CapellamodellerPackage.eINSTANCE);
+		EmdePackageImpl theEmdePackage = (EmdePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI) instanceof EmdePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI) : EmdePackage.eINSTANCE);
+		ActivityPackageImpl theActivityPackage = (ActivityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) instanceof ActivityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) : ActivityPackage.eINSTANCE);
+		LaPackageImpl theLaPackage = (LaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) instanceof LaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) : LaPackage.eINSTANCE);
 		InformationPackageImpl theInformationPackage = (InformationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InformationPackage.eNS_URI) instanceof InformationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InformationPackage.eNS_URI) : InformationPackage.eINSTANCE);
 		CommunicationPackageImpl theCommunicationPackage = (CommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI) instanceof CommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI) : CommunicationPackage.eINSTANCE);
 		DatatypePackageImpl theDatatypePackage = (DatatypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypePackage.eNS_URI) instanceof DatatypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypePackage.eNS_URI) : DatatypePackage.eINSTANCE);
 		DatavaluePackageImpl theDatavaluePackage = (DatavaluePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatavaluePackage.eNS_URI) instanceof DatavaluePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatavaluePackage.eNS_URI) : DatavaluePackage.eINSTANCE);
-		ActivityPackageImpl theActivityPackage = (ActivityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) instanceof ActivityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) : ActivityPackage.eINSTANCE);
-		CapellacommonPackageImpl theCapellacommonPackage = (CapellacommonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) instanceof CapellacommonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) : CapellacommonPackage.eINSTANCE);
-		FaPackageImpl theFaPackage = (FaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) instanceof FaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) : FaPackage.eINSTANCE);
 		ModellingcorePackageImpl theModellingcorePackage = (ModellingcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModellingcorePackage.eNS_URI) instanceof ModellingcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModellingcorePackage.eNS_URI) : ModellingcorePackage.eINSTANCE);
+		CapellacorePackageImpl theCapellacorePackage = (CapellacorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) instanceof CapellacorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) : CapellacorePackage.eINSTANCE);
+		SharedmodelPackageImpl theSharedmodelPackage = (SharedmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SharedmodelPackage.eNS_URI) instanceof SharedmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SharedmodelPackage.eNS_URI) : SharedmodelPackage.eINSTANCE);
+		CapellacommonPackageImpl theCapellacommonPackage = (CapellacommonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) instanceof CapellacommonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) : CapellacommonPackage.eINSTANCE);
+		InteractionPackageImpl theInteractionPackage = (InteractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) instanceof InteractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) : InteractionPackage.eINSTANCE);
+		FaPackageImpl theFaPackage = (FaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) instanceof FaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) : FaPackage.eINSTANCE);
+		CtxPackageImpl theCtxPackage = (CtxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) instanceof CtxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) : CtxPackage.eINSTANCE);
+		PaPackageImpl thePaPackage = (PaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) instanceof PaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) : PaPackage.eINSTANCE);
+		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
+		OaPackageImpl theOaPackage = (OaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) instanceof OaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) : OaPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRequirementPackage.createPackageContents();
-		theEpbsPackage.createPackageContents();
-		theCtxPackage.createPackageContents();
-		thePaPackage.createPackageContents();
-		theDeploymentPackage.createPackageContents();
-		theLaPackage.createPackageContents();
-		theEmdePackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
-		theOaPackage.createPackageContents();
 		theCsPackage.createPackageContents();
-		theCapellacorePackage.createPackageContents();
-		theInteractionPackage.createPackageContents();
+		theEpbsPackage.createPackageContents();
+		theCapellamodellerPackage.createPackageContents();
+		theEmdePackage.createPackageContents();
+		theActivityPackage.createPackageContents();
+		theLaPackage.createPackageContents();
 		theInformationPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theDatatypePackage.createPackageContents();
 		theDatavaluePackage.createPackageContents();
-		theActivityPackage.createPackageContents();
-		theCapellacommonPackage.createPackageContents();
-		theFaPackage.createPackageContents();
 		theModellingcorePackage.createPackageContents();
+		theCapellacorePackage.createPackageContents();
+		theSharedmodelPackage.createPackageContents();
+		theCapellacommonPackage.createPackageContents();
+		theInteractionPackage.createPackageContents();
+		theFaPackage.createPackageContents();
+		theCtxPackage.createPackageContents();
+		thePaPackage.createPackageContents();
+		theDeploymentPackage.createPackageContents();
+		theOaPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRequirementPackage.initializePackageContents();
-		theEpbsPackage.initializePackageContents();
-		theCtxPackage.initializePackageContents();
-		thePaPackage.initializePackageContents();
-		theDeploymentPackage.initializePackageContents();
-		theLaPackage.initializePackageContents();
-		theEmdePackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
-		theOaPackage.initializePackageContents();
 		theCsPackage.initializePackageContents();
-		theCapellacorePackage.initializePackageContents();
-		theInteractionPackage.initializePackageContents();
+		theEpbsPackage.initializePackageContents();
+		theCapellamodellerPackage.initializePackageContents();
+		theEmdePackage.initializePackageContents();
+		theActivityPackage.initializePackageContents();
+		theLaPackage.initializePackageContents();
 		theInformationPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theDatatypePackage.initializePackageContents();
 		theDatavaluePackage.initializePackageContents();
-		theActivityPackage.initializePackageContents();
-		theCapellacommonPackage.initializePackageContents();
-		theFaPackage.initializePackageContents();
 		theModellingcorePackage.initializePackageContents();
+		theCapellacorePackage.initializePackageContents();
+		theSharedmodelPackage.initializePackageContents();
+		theCapellacommonPackage.initializePackageContents();
+		theInteractionPackage.initializePackageContents();
+		theFaPackage.initializePackageContents();
+		theCtxPackage.initializePackageContents();
+		thePaPackage.initializePackageContents();
+		theDeploymentPackage.initializePackageContents();
+		theOaPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theRequirementPackage.freeze();
@@ -585,8 +599,8 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEReference(getRequirementsPkg_OwnedRequirementPkgs(), this.getRequirementsPkg(), null, "ownedRequirementPkgs", null, 0, -1, RequirementsPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirementsTraceEClass, RequirementsTrace.class, "RequirementsTrace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRequirementsTrace_Source(), theModellingcorePackage.getTraceableElement(), null, "source", null, 1, 1, RequirementsTrace.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirementsTrace_Target(), theModellingcorePackage.getTraceableElement(), null, "target", null, 1, 1, RequirementsTrace.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirementsTrace_Source(), theModellingcorePackage.getTraceableElement(), null, "source", null, 1, 1, RequirementsTrace.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirementsTrace_Target(), theModellingcorePackage.getTraceableElement(), null, "target", null, 1, 1, RequirementsTrace.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirementEClass, Requirement.class, "Requirement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRequirement_IsObsolete(), ecorePackage.getEBoolean(), "isObsolete", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -596,7 +610,7 @@ public class RequirementPackageImpl extends EPackageImpl implements RequirementP
 		initEAttribute(getRequirement_VerificationPhase(), ecorePackage.getEString(), "verificationPhase", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_ImplementationVersion(), ecorePackage.getEString(), "implementationVersion", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Feature(), ecorePackage.getEString(), "feature", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirement_RelatedCapellaElements(), theCapellacorePackage.getCapellaElement(), null, "relatedCapellaElements", null, 0, -1, Requirement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_RelatedCapellaElements(), theCapellacorePackage.getCapellaElement(), null, "relatedCapellaElements", null, 0, -1, Requirement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(systemFunctionalInterfaceRequirementEClass, SystemFunctionalInterfaceRequirement.class, "SystemFunctionalInterfaceRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

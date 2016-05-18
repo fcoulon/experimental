@@ -37,7 +37,7 @@ public interface RequirementsTrace extends Trace {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.requirement.RequirementPackage#getRequirementsTrace_Source()
-	 * @model resolveProxies="false" required="true" transient="true" changeable="false" derived="true"
+	 * @model resolveProxies="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	TraceableElement getSource();
@@ -52,7 +52,7 @@ public interface RequirementsTrace extends Trace {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.requirement.RequirementPackage#getRequirementsTrace_Target()
-	 * @model resolveProxies="false" required="true" transient="true" changeable="false" derived="true"
+	 * @model resolveProxies="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	TraceableElement getTarget();

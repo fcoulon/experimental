@@ -81,7 +81,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * @return the value of the '<em>Used Interface Links</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_UsedInterfaceLinks()
 	 * @see org.sample.melangeproject.capellawithmass.cs.InterfaceUse#getInterfaceUser
-	 * @model opposite="interfaceUser" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="interfaceUser" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/UML2Mapping featureName='clientDependency' featureOwner='NamedElement'"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='usedInterfaceLinks'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) interfaceUse relationships that involve this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
@@ -103,7 +103,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * @return the value of the '<em>Used Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_UsedInterfaces()
 	 * @see org.sample.melangeproject.capellawithmass.cs.Interface#getUserComponents
-	 * @model opposite="userComponents" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="userComponents" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='usedInterfaces'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to the Interfaces being used by this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -142,7 +142,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * @return the value of the '<em>Implemented Interface Links</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ImplementedInterfaceLinks()
 	 * @see org.sample.melangeproject.capellawithmass.cs.InterfaceImplementation#getInterfaceImplementor
-	 * @model opposite="interfaceImplementor" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="interfaceImplementor" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/UML2Mapping featureName='interfaceRealization' featureOwner='BehavioredClassifier'"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='realizedInterfaceLinks'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) list of InterfaceImplementation links that involve this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
@@ -164,7 +164,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * @return the value of the '<em>Implemented Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ImplementedInterfaces()
 	 * @see org.sample.melangeproject.capellawithmass.cs.Interface#getImplementorComponents
-	 * @model opposite="implementorComponents" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="implementorComponents" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='implementedInterfaces'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to the Interfaces being implemented by this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -185,7 +185,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * @return the value of the '<em>Provisioned Component Allocations</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ProvisionedComponentAllocations()
 	 * @see org.sample.melangeproject.capellawithmass.cs.ComponentAllocation#getAllocatingComponent
-	 * @model opposite="allocatingComponent" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="allocatingComponent" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) list of allocation links made from this component to other components\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -205,7 +205,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * @return the value of the '<em>Provisioning Component Allocations</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ProvisioningComponentAllocations()
 	 * @see org.sample.melangeproject.capellawithmass.cs.ComponentAllocation#getAllocatedComponent
-	 * @model opposite="allocatedComponent" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="allocatedComponent" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) list of allocation links from other components, to this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -223,7 +223,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocated Components</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_AllocatedComponents()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to the components being allocated from this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -241,7 +241,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocating Components</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_AllocatingComponents()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to the components allocating this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
@@ -260,7 +260,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provided Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ProvidedInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='providedInterfaces'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to the Interfaces being provided by this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -279,7 +279,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Required Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_RequiredInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='requiredInterfaces'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) direct references to the Interfaces being required by this component\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -298,7 +298,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contained Component Ports</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ContainedComponentPorts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic feature='ownedFeatures'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -316,7 +316,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contained Parts</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ContainedParts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic feature='ownedFeatures'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -334,7 +334,7 @@ public interface Component extends Block, PartitionableElement, InterfaceAllocat
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contained Physical Ports</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getComponent_ContainedPhysicalPorts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic feature='ownedFeatures'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated

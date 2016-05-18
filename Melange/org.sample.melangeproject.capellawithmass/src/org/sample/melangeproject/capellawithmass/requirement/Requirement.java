@@ -241,7 +241,7 @@ public interface Requirement extends Namespace {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Related Capella Elements</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.requirement.RequirementPackage#getRequirement_RelatedCapellaElements()
-	 * @model transient="true" changeable="false" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */

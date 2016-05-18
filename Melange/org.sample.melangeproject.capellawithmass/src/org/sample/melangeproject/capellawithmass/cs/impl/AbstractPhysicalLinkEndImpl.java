@@ -235,6 +235,16 @@ public abstract class AbstractPhysicalLinkEndImpl extends ModelElementImpl imple
 	protected EList<EnumerationPropertyLiteral> features;
 
 	/**
+	 * The cached value of the '{@link #getInvolvedLinks() <em>Involved Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvolvedLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalLink> involvedLinks;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -513,11 +523,10 @@ public abstract class AbstractPhysicalLinkEndImpl extends ModelElementImpl imple
 	 * @generated
 	 */
 	public EList<PhysicalLink> getInvolvedLinks() {
-		// TODO: implement this method to return the 'Involved Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (involvedLinks == null) {
+			involvedLinks = new EObjectResolvingEList<PhysicalLink>(PhysicalLink.class, this, CsPackage.ABSTRACT_PHYSICAL_LINK_END__INVOLVED_LINKS);
+		}
+		return involvedLinks;
 	}
 
 	/**
@@ -725,7 +734,7 @@ public abstract class AbstractPhysicalLinkEndImpl extends ModelElementImpl imple
 			case CsPackage.ABSTRACT_PHYSICAL_LINK_END__APPLIED_REQUIREMENTS:
 				return !getAppliedRequirements().isEmpty();
 			case CsPackage.ABSTRACT_PHYSICAL_LINK_END__INVOLVED_LINKS:
-				return !getInvolvedLinks().isEmpty();
+				return involvedLinks != null && !involvedLinks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

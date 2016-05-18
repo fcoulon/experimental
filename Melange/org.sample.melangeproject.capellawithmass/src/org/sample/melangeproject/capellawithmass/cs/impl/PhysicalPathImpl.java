@@ -88,6 +88,16 @@ public class PhysicalPathImpl extends NamedElementImpl implements PhysicalPath {
 	protected EList<PhysicalPathInvolvement> ownedPhysicalPathInvolvements;
 
 	/**
+	 * The cached value of the '{@link #getFirstPhysicalPathInvolvements() <em>First Physical Path Involvements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstPhysicalPathInvolvements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalPathInvolvement> firstPhysicalPathInvolvements;
+
+	/**
 	 * The cached value of the '{@link #getOwnedPhysicalPathRealizations() <em>Owned Physical Path Realizations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,6 +106,26 @@ public class PhysicalPathImpl extends NamedElementImpl implements PhysicalPath {
 	 * @ordered
 	 */
 	protected EList<PhysicalPathRealization> ownedPhysicalPathRealizations;
+
+	/**
+	 * The cached value of the '{@link #getRealizedPhysicalPaths() <em>Realized Physical Paths</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRealizedPhysicalPaths()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalPath> realizedPhysicalPaths;
+
+	/**
+	 * The cached value of the '{@link #getRealizingPhysicalPaths() <em>Realizing Physical Paths</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRealizingPhysicalPaths()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalPath> realizingPhysicalPaths;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,11 +227,10 @@ public class PhysicalPathImpl extends NamedElementImpl implements PhysicalPath {
 	 * @generated
 	 */
 	public EList<PhysicalPathInvolvement> getFirstPhysicalPathInvolvements() {
-		// TODO: implement this method to return the 'First Physical Path Involvements' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (firstPhysicalPathInvolvements == null) {
+			firstPhysicalPathInvolvements = new EObjectResolvingEList<PhysicalPathInvolvement>(PhysicalPathInvolvement.class, this, CsPackage.PHYSICAL_PATH__FIRST_PHYSICAL_PATH_INVOLVEMENTS);
+		}
+		return firstPhysicalPathInvolvements;
 	}
 
 	/**
@@ -222,11 +251,10 @@ public class PhysicalPathImpl extends NamedElementImpl implements PhysicalPath {
 	 * @generated
 	 */
 	public EList<PhysicalPath> getRealizedPhysicalPaths() {
-		// TODO: implement this method to return the 'Realized Physical Paths' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (realizedPhysicalPaths == null) {
+			realizedPhysicalPaths = new EObjectResolvingEList<PhysicalPath>(PhysicalPath.class, this, CsPackage.PHYSICAL_PATH__REALIZED_PHYSICAL_PATHS);
+		}
+		return realizedPhysicalPaths;
 	}
 
 	/**
@@ -235,11 +263,10 @@ public class PhysicalPathImpl extends NamedElementImpl implements PhysicalPath {
 	 * @generated
 	 */
 	public EList<PhysicalPath> getRealizingPhysicalPaths() {
-		// TODO: implement this method to return the 'Realizing Physical Paths' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (realizingPhysicalPaths == null) {
+			realizingPhysicalPaths = new EObjectResolvingEList<PhysicalPath>(PhysicalPath.class, this, CsPackage.PHYSICAL_PATH__REALIZING_PHYSICAL_PATHS);
+		}
+		return realizingPhysicalPaths;
 	}
 
 	/**
@@ -366,13 +393,13 @@ public class PhysicalPathImpl extends NamedElementImpl implements PhysicalPath {
 			case CsPackage.PHYSICAL_PATH__OWNED_PHYSICAL_PATH_INVOLVEMENTS:
 				return ownedPhysicalPathInvolvements != null && !ownedPhysicalPathInvolvements.isEmpty();
 			case CsPackage.PHYSICAL_PATH__FIRST_PHYSICAL_PATH_INVOLVEMENTS:
-				return !getFirstPhysicalPathInvolvements().isEmpty();
+				return firstPhysicalPathInvolvements != null && !firstPhysicalPathInvolvements.isEmpty();
 			case CsPackage.PHYSICAL_PATH__OWNED_PHYSICAL_PATH_REALIZATIONS:
 				return ownedPhysicalPathRealizations != null && !ownedPhysicalPathRealizations.isEmpty();
 			case CsPackage.PHYSICAL_PATH__REALIZED_PHYSICAL_PATHS:
-				return !getRealizedPhysicalPaths().isEmpty();
+				return realizedPhysicalPaths != null && !realizedPhysicalPaths.isEmpty();
 			case CsPackage.PHYSICAL_PATH__REALIZING_PHYSICAL_PATHS:
-				return !getRealizingPhysicalPaths().isEmpty();
+				return realizingPhysicalPaths != null && !realizingPhysicalPaths.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

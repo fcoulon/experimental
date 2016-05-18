@@ -49,7 +49,7 @@ public interface Part extends Partition, InformationsExchanger, DeployableElemen
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provided Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPart_ProvidedInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='providedInterfaces'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(computed) the provided interfaces associated to the classifier that this part represents\r\n[source: Capella study]\r\n\r\nThe interfaces that the component exposes to its environment.\r\n[source: UML superstructure v2.2]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -68,7 +68,7 @@ public interface Part extends Partition, InformationsExchanger, DeployableElemen
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Required Interfaces</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPart_RequiredInterfaces()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='requiredInterfaces'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(computed) the required interfaces associated to the classifier that this part represents\r\n[source: Capella study]\r\n\r\nThe interfaces that the component requires from other components in its environment in order to be able to offer\r\nits full set of provided functionality\r\n[source: UML superstructure v2.2]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
@@ -105,7 +105,7 @@ public interface Part extends Partition, InformationsExchanger, DeployableElemen
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Deployed Parts</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPart_DeployedParts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */
@@ -122,7 +122,7 @@ public interface Part extends Partition, InformationsExchanger, DeployableElemen
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Deploying Parts</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPart_DeployingParts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated

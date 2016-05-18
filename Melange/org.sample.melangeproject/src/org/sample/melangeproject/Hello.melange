@@ -1,7 +1,7 @@
 package org.sample.melangeproject
 
 language Capella {
-	syntax "platform:/resource/org.polarsys.capella.core.data.def/model/CompositeStructure.ecore"
+	syntax "platform:/resource/org.polarsys.capella.core.data.def/model/CapellaModeller.ecore"
 	withGenmodel "platform:/resource/org.polarsys.capella.core.data.gen/model/CapellaModeller.genmodel"
 }
 

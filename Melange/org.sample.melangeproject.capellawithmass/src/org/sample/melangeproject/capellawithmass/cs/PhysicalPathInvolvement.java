@@ -53,7 +53,7 @@ public interface PhysicalPathInvolvement extends Involvement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Previous Involvements</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalPathInvolvement_PreviousInvolvements()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -70,7 +70,7 @@ public interface PhysicalPathInvolvement extends Involvement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Involved Element</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalPathInvolvement_InvolvedElement()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface PhysicalPathInvolvement extends Involvement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Involved Component</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalPathInvolvement_InvolvedComponent()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */

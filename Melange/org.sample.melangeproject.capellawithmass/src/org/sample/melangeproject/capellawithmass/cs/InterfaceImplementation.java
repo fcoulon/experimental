@@ -37,7 +37,7 @@ public interface InterfaceImplementation extends Relationship {
 	 * @return the value of the '<em>Interface Implementor</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterfaceImplementation_InterfaceImplementor()
 	 * @see org.sample.melangeproject.capellawithmass.cs.Component#getImplementedInterfaceLinks
-	 * @model opposite="implementedInterfaceLinks" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="implementedInterfaceLinks" required="true" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/UML2Mapping featureName='implementingClassifier' featureOwner='InterfaceRealization'"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='Interface Implementor'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='References the Component that owns this Interface implementation.\r\n[source: Capella study]' constraints='none' comment/notes='none'"

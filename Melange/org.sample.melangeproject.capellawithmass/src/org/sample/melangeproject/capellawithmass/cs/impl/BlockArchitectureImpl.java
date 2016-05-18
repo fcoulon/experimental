@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.sample.melangeproject.capellawithmass.capellacommon.AbstractCapabilityPkg;
@@ -90,6 +92,46 @@ public abstract class BlockArchitectureImpl extends AbstractFunctionalArchitectu
 	 * @ordered
 	 */
 	protected DataPkg ownedDataPkg;
+
+	/**
+	 * The cached value of the '{@link #getProvisionedArchitectureAllocations() <em>Provisioned Architecture Allocations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvisionedArchitectureAllocations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ArchitectureAllocation> provisionedArchitectureAllocations;
+
+	/**
+	 * The cached value of the '{@link #getProvisioningArchitectureAllocations() <em>Provisioning Architecture Allocations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvisioningArchitectureAllocations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ArchitectureAllocation> provisioningArchitectureAllocations;
+
+	/**
+	 * The cached value of the '{@link #getAllocatedArchitectures() <em>Allocated Architectures</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatedArchitectures()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BlockArchitecture> allocatedArchitectures;
+
+	/**
+	 * The cached value of the '{@link #getAllocatingArchitectures() <em>Allocating Architectures</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatingArchitectures()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BlockArchitecture> allocatingArchitectures;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,11 +299,10 @@ public abstract class BlockArchitectureImpl extends AbstractFunctionalArchitectu
 	 * @generated
 	 */
 	public EList<ArchitectureAllocation> getProvisionedArchitectureAllocations() {
-		// TODO: implement this method to return the 'Provisioned Architecture Allocations' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (provisionedArchitectureAllocations == null) {
+			provisionedArchitectureAllocations = new EObjectWithInverseResolvingEList<ArchitectureAllocation>(ArchitectureAllocation.class, this, CsPackage.BLOCK_ARCHITECTURE__PROVISIONED_ARCHITECTURE_ALLOCATIONS, CsPackage.ARCHITECTURE_ALLOCATION__ALLOCATING_ARCHITECTURE);
+		}
+		return provisionedArchitectureAllocations;
 	}
 
 	/**
@@ -270,11 +311,10 @@ public abstract class BlockArchitectureImpl extends AbstractFunctionalArchitectu
 	 * @generated
 	 */
 	public EList<ArchitectureAllocation> getProvisioningArchitectureAllocations() {
-		// TODO: implement this method to return the 'Provisioning Architecture Allocations' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (provisioningArchitectureAllocations == null) {
+			provisioningArchitectureAllocations = new EObjectWithInverseResolvingEList<ArchitectureAllocation>(ArchitectureAllocation.class, this, CsPackage.BLOCK_ARCHITECTURE__PROVISIONING_ARCHITECTURE_ALLOCATIONS, CsPackage.ARCHITECTURE_ALLOCATION__ALLOCATED_ARCHITECTURE);
+		}
+		return provisioningArchitectureAllocations;
 	}
 
 	/**
@@ -283,11 +323,10 @@ public abstract class BlockArchitectureImpl extends AbstractFunctionalArchitectu
 	 * @generated
 	 */
 	public EList<BlockArchitecture> getAllocatedArchitectures() {
-		// TODO: implement this method to return the 'Allocated Architectures' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (allocatedArchitectures == null) {
+			allocatedArchitectures = new EObjectResolvingEList<BlockArchitecture>(BlockArchitecture.class, this, CsPackage.BLOCK_ARCHITECTURE__ALLOCATED_ARCHITECTURES);
+		}
+		return allocatedArchitectures;
 	}
 
 	/**
@@ -296,11 +335,27 @@ public abstract class BlockArchitectureImpl extends AbstractFunctionalArchitectu
 	 * @generated
 	 */
 	public EList<BlockArchitecture> getAllocatingArchitectures() {
-		// TODO: implement this method to return the 'Allocating Architectures' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (allocatingArchitectures == null) {
+			allocatingArchitectures = new EObjectResolvingEList<BlockArchitecture>(BlockArchitecture.class, this, CsPackage.BLOCK_ARCHITECTURE__ALLOCATING_ARCHITECTURES);
+		}
+		return allocatingArchitectures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.BLOCK_ARCHITECTURE__PROVISIONED_ARCHITECTURE_ALLOCATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProvisionedArchitectureAllocations()).basicAdd(otherEnd, msgs);
+			case CsPackage.BLOCK_ARCHITECTURE__PROVISIONING_ARCHITECTURE_ALLOCATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProvisioningArchitectureAllocations()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -319,6 +374,10 @@ public abstract class BlockArchitectureImpl extends AbstractFunctionalArchitectu
 				return basicSetOwnedInterfacePkg(null, msgs);
 			case CsPackage.BLOCK_ARCHITECTURE__OWNED_DATA_PKG:
 				return basicSetOwnedDataPkg(null, msgs);
+			case CsPackage.BLOCK_ARCHITECTURE__PROVISIONED_ARCHITECTURE_ALLOCATIONS:
+				return ((InternalEList<?>)getProvisionedArchitectureAllocations()).basicRemove(otherEnd, msgs);
+			case CsPackage.BLOCK_ARCHITECTURE__PROVISIONING_ARCHITECTURE_ALLOCATIONS:
+				return ((InternalEList<?>)getProvisioningArchitectureAllocations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -418,13 +477,13 @@ public abstract class BlockArchitectureImpl extends AbstractFunctionalArchitectu
 			case CsPackage.BLOCK_ARCHITECTURE__OWNED_DATA_PKG:
 				return ownedDataPkg != null;
 			case CsPackage.BLOCK_ARCHITECTURE__PROVISIONED_ARCHITECTURE_ALLOCATIONS:
-				return !getProvisionedArchitectureAllocations().isEmpty();
+				return provisionedArchitectureAllocations != null && !provisionedArchitectureAllocations.isEmpty();
 			case CsPackage.BLOCK_ARCHITECTURE__PROVISIONING_ARCHITECTURE_ALLOCATIONS:
-				return !getProvisioningArchitectureAllocations().isEmpty();
+				return provisioningArchitectureAllocations != null && !provisioningArchitectureAllocations.isEmpty();
 			case CsPackage.BLOCK_ARCHITECTURE__ALLOCATED_ARCHITECTURES:
-				return !getAllocatedArchitectures().isEmpty();
+				return allocatedArchitectures != null && !allocatedArchitectures.isEmpty();
 			case CsPackage.BLOCK_ARCHITECTURE__ALLOCATING_ARCHITECTURES:
-				return !getAllocatingArchitectures().isEmpty();
+				return allocatingArchitectures != null && !allocatingArchitectures.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,8 +2,12 @@
  */
 package org.sample.melangeproject.capellawithmass.cs.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.sample.melangeproject.capellawithmass.cs.CsPackage;
 import org.sample.melangeproject.capellawithmass.cs.PhysicalPath;
@@ -23,6 +27,16 @@ import org.sample.melangeproject.capellawithmass.cs.PhysicalPathReference;
  * @generated
  */
 public class PhysicalPathReferenceImpl extends PhysicalPathInvolvementImpl implements PhysicalPathReference {
+	/**
+	 * The cached value of the '{@link #getReferencedPhysicalPath() <em>Referenced Physical Path</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferencedPhysicalPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected PhysicalPath referencedPhysicalPath;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,8 +62,15 @@ public class PhysicalPathReferenceImpl extends PhysicalPathInvolvementImpl imple
 	 * @generated
 	 */
 	public PhysicalPath getReferencedPhysicalPath() {
-		PhysicalPath referencedPhysicalPath = basicGetReferencedPhysicalPath();
-		return referencedPhysicalPath != null && referencedPhysicalPath.eIsProxy() ? (PhysicalPath)eResolveProxy((InternalEObject)referencedPhysicalPath) : referencedPhysicalPath;
+		if (referencedPhysicalPath != null && referencedPhysicalPath.eIsProxy()) {
+			InternalEObject oldReferencedPhysicalPath = (InternalEObject)referencedPhysicalPath;
+			referencedPhysicalPath = (PhysicalPath)eResolveProxy(oldReferencedPhysicalPath);
+			if (referencedPhysicalPath != oldReferencedPhysicalPath) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.PHYSICAL_PATH_REFERENCE__REFERENCED_PHYSICAL_PATH, oldReferencedPhysicalPath, referencedPhysicalPath));
+			}
+		}
+		return referencedPhysicalPath;
 	}
 
 	/**
@@ -58,10 +79,7 @@ public class PhysicalPathReferenceImpl extends PhysicalPathInvolvementImpl imple
 	 * @generated
 	 */
 	public PhysicalPath basicGetReferencedPhysicalPath() {
-		// TODO: implement this method to return the 'Referenced Physical Path' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return referencedPhysicalPath;
 	}
 
 	/**
@@ -88,7 +106,7 @@ public class PhysicalPathReferenceImpl extends PhysicalPathInvolvementImpl imple
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CsPackage.PHYSICAL_PATH_REFERENCE__REFERENCED_PHYSICAL_PATH:
-				return basicGetReferencedPhysicalPath() != null;
+				return referencedPhysicalPath != null;
 		}
 		return super.eIsSet(featureID);
 	}

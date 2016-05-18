@@ -24,6 +24,9 @@ Export-Package: org.sample.melangeproject.capellawithmass.aspects,
  org.sample.melangeproject.capellawithmass.capellacore,
  org.sample.melangeproject.capellawithmass.capellacore.impl,
  org.sample.melangeproject.capellawithmass.capellacore.util,
+ org.sample.melangeproject.capellawithmass.capellamodeller,
+ org.sample.melangeproject.capellawithmass.capellamodeller.impl,
+ org.sample.melangeproject.capellawithmass.capellamodeller.util,
  org.sample.melangeproject.capellawithmass.cs,
  org.sample.melangeproject.capellawithmass.cs.impl,
  org.sample.melangeproject.capellawithmass.cs.util,
@@ -71,6 +74,9 @@ Export-Package: org.sample.melangeproject.capellawithmass.aspects,
  org.sample.melangeproject.capellawithmass.pa.util,
  org.sample.melangeproject.capellawithmass.requirement,
  org.sample.melangeproject.capellawithmass.requirement.impl,
- org.sample.melangeproject.capellawithmass.requirement.util
+ org.sample.melangeproject.capellawithmass.requirement.util,
+ org.sample.melangeproject.capellawithmass.sharedmodel,
+ org.sample.melangeproject.capellawithmass.sharedmodel.impl,
+ org.sample.melangeproject.capellawithmass.sharedmodel.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 

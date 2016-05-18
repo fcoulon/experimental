@@ -81,7 +81,7 @@ public interface PhysicalPort extends Partition, Port, AbstractPhysicalArtifact,
 	 * @return the value of the '<em>Allocated Component Ports</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalPort_AllocatedComponentPorts()
 	 * @see org.sample.melangeproject.capellawithmass.fa.ComponentPort#getAllocatingPhysicalPorts
-	 * @model opposite="allocatingPhysicalPorts" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="allocatingPhysicalPorts" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */
@@ -98,7 +98,7 @@ public interface PhysicalPort extends Partition, Port, AbstractPhysicalArtifact,
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realized Physical Ports</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalPort_RealizedPhysicalPorts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='none' constraints='none' comment/notes='none'"
 	 * @generated
 	 */
@@ -115,7 +115,7 @@ public interface PhysicalPort extends Partition, Port, AbstractPhysicalArtifact,
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realizing Physical Ports</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalPort_RealizingPhysicalPorts()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='none' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 * @generated

@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.sample.melangeproject.capellawithmass.capellacore.CapellacorePackage;
@@ -154,6 +156,26 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	protected EList<InterfaceAllocation> ownedInterfaceAllocations;
 
 	/**
+	 * The cached value of the '{@link #getProvisionedInterfaceAllocations() <em>Provisioned Interface Allocations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvisionedInterfaceAllocations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InterfaceAllocation> provisionedInterfaceAllocations;
+
+	/**
+	 * The cached value of the '{@link #getAllocatedInterfaces() <em>Allocated Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatedInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> allocatedInterfaces;
+
+	/**
 	 * The cached value of the '{@link #getOwnedCommunicationLinks() <em>Owned Communication Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,6 +196,26 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	protected EList<InterfaceUse> ownedInterfaceUses;
 
 	/**
+	 * The cached value of the '{@link #getUsedInterfaceLinks() <em>Used Interface Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsedInterfaceLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InterfaceUse> usedInterfaceLinks;
+
+	/**
+	 * The cached value of the '{@link #getUsedInterfaces() <em>Used Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsedInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> usedInterfaces;
+
+	/**
 	 * The cached value of the '{@link #getOwnedInterfaceImplementations() <em>Owned Interface Implementations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +224,116 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<InterfaceImplementation> ownedInterfaceImplementations;
+
+	/**
+	 * The cached value of the '{@link #getImplementedInterfaceLinks() <em>Implemented Interface Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplementedInterfaceLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InterfaceImplementation> implementedInterfaceLinks;
+
+	/**
+	 * The cached value of the '{@link #getImplementedInterfaces() <em>Implemented Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplementedInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> implementedInterfaces;
+
+	/**
+	 * The cached value of the '{@link #getProvisionedComponentAllocations() <em>Provisioned Component Allocations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvisionedComponentAllocations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentAllocation> provisionedComponentAllocations;
+
+	/**
+	 * The cached value of the '{@link #getProvisioningComponentAllocations() <em>Provisioning Component Allocations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvisioningComponentAllocations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentAllocation> provisioningComponentAllocations;
+
+	/**
+	 * The cached value of the '{@link #getAllocatedComponents() <em>Allocated Components</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatedComponents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Component> allocatedComponents;
+
+	/**
+	 * The cached value of the '{@link #getAllocatingComponents() <em>Allocating Components</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatingComponents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Component> allocatingComponents;
+
+	/**
+	 * The cached value of the '{@link #getProvidedInterfaces() <em>Provided Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidedInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> providedInterfaces;
+
+	/**
+	 * The cached value of the '{@link #getRequiredInterfaces() <em>Required Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> requiredInterfaces;
+
+	/**
+	 * The cached value of the '{@link #getContainedComponentPorts() <em>Contained Component Ports</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedComponentPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentPort> containedComponentPorts;
+
+	/**
+	 * The cached value of the '{@link #getContainedParts() <em>Contained Parts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedParts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Part> containedParts;
+
+	/**
+	 * The cached value of the '{@link #getContainedPhysicalPorts() <em>Contained Physical Ports</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedPhysicalPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalPort> containedPhysicalPorts;
 
 	/**
 	 * The cached value of the '{@link #getOwnedPhysicalPath() <em>Owned Physical Path</em>}' containment reference list.
@@ -386,11 +538,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<InterfaceAllocation> getProvisionedInterfaceAllocations() {
-		// TODO: implement this method to return the 'Provisioned Interface Allocations' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (provisionedInterfaceAllocations == null) {
+			provisionedInterfaceAllocations = new EObjectWithInverseResolvingEList<InterfaceAllocation>(InterfaceAllocation.class, this, CsPackage.COMPONENT__PROVISIONED_INTERFACE_ALLOCATIONS, CsPackage.INTERFACE_ALLOCATION__ALLOCATING_INTERFACE_ALLOCATOR);
+		}
+		return provisionedInterfaceAllocations;
 	}
 
 	/**
@@ -399,11 +550,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Interface> getAllocatedInterfaces() {
-		// TODO: implement this method to return the 'Allocated Interfaces' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (allocatedInterfaces == null) {
+			allocatedInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, CsPackage.COMPONENT__ALLOCATED_INTERFACES);
+		}
+		return allocatedInterfaces;
 	}
 
 	/**
@@ -566,11 +716,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<InterfaceUse> getUsedInterfaceLinks() {
-		// TODO: implement this method to return the 'Used Interface Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (usedInterfaceLinks == null) {
+			usedInterfaceLinks = new EObjectWithInverseResolvingEList<InterfaceUse>(InterfaceUse.class, this, CsPackage.COMPONENT__USED_INTERFACE_LINKS, CsPackage.INTERFACE_USE__INTERFACE_USER);
+		}
+		return usedInterfaceLinks;
 	}
 
 	/**
@@ -579,11 +728,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Interface> getUsedInterfaces() {
-		// TODO: implement this method to return the 'Used Interfaces' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (usedInterfaces == null) {
+			usedInterfaces = new EObjectWithInverseResolvingEList.ManyInverse<Interface>(Interface.class, this, CsPackage.COMPONENT__USED_INTERFACES, CsPackage.INTERFACE__USER_COMPONENTS);
+		}
+		return usedInterfaces;
 	}
 
 	/**
@@ -604,11 +752,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<InterfaceImplementation> getImplementedInterfaceLinks() {
-		// TODO: implement this method to return the 'Implemented Interface Links' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (implementedInterfaceLinks == null) {
+			implementedInterfaceLinks = new EObjectWithInverseResolvingEList<InterfaceImplementation>(InterfaceImplementation.class, this, CsPackage.COMPONENT__IMPLEMENTED_INTERFACE_LINKS, CsPackage.INTERFACE_IMPLEMENTATION__INTERFACE_IMPLEMENTOR);
+		}
+		return implementedInterfaceLinks;
 	}
 
 	/**
@@ -617,11 +764,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Interface> getImplementedInterfaces() {
-		// TODO: implement this method to return the 'Implemented Interfaces' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (implementedInterfaces == null) {
+			implementedInterfaces = new EObjectWithInverseResolvingEList.ManyInverse<Interface>(Interface.class, this, CsPackage.COMPONENT__IMPLEMENTED_INTERFACES, CsPackage.INTERFACE__IMPLEMENTOR_COMPONENTS);
+		}
+		return implementedInterfaces;
 	}
 
 	/**
@@ -630,11 +776,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<ComponentAllocation> getProvisionedComponentAllocations() {
-		// TODO: implement this method to return the 'Provisioned Component Allocations' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (provisionedComponentAllocations == null) {
+			provisionedComponentAllocations = new EObjectWithInverseResolvingEList<ComponentAllocation>(ComponentAllocation.class, this, CsPackage.COMPONENT__PROVISIONED_COMPONENT_ALLOCATIONS, CsPackage.COMPONENT_ALLOCATION__ALLOCATING_COMPONENT);
+		}
+		return provisionedComponentAllocations;
 	}
 
 	/**
@@ -643,11 +788,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<ComponentAllocation> getProvisioningComponentAllocations() {
-		// TODO: implement this method to return the 'Provisioning Component Allocations' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (provisioningComponentAllocations == null) {
+			provisioningComponentAllocations = new EObjectWithInverseResolvingEList<ComponentAllocation>(ComponentAllocation.class, this, CsPackage.COMPONENT__PROVISIONING_COMPONENT_ALLOCATIONS, CsPackage.COMPONENT_ALLOCATION__ALLOCATED_COMPONENT);
+		}
+		return provisioningComponentAllocations;
 	}
 
 	/**
@@ -656,11 +800,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Component> getAllocatedComponents() {
-		// TODO: implement this method to return the 'Allocated Components' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (allocatedComponents == null) {
+			allocatedComponents = new EObjectResolvingEList<Component>(Component.class, this, CsPackage.COMPONENT__ALLOCATED_COMPONENTS);
+		}
+		return allocatedComponents;
 	}
 
 	/**
@@ -669,11 +812,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Component> getAllocatingComponents() {
-		// TODO: implement this method to return the 'Allocating Components' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (allocatingComponents == null) {
+			allocatingComponents = new EObjectResolvingEList<Component>(Component.class, this, CsPackage.COMPONENT__ALLOCATING_COMPONENTS);
+		}
+		return allocatingComponents;
 	}
 
 	/**
@@ -682,11 +824,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Interface> getProvidedInterfaces() {
-		// TODO: implement this method to return the 'Provided Interfaces' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (providedInterfaces == null) {
+			providedInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, CsPackage.COMPONENT__PROVIDED_INTERFACES);
+		}
+		return providedInterfaces;
 	}
 
 	/**
@@ -695,11 +836,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Interface> getRequiredInterfaces() {
-		// TODO: implement this method to return the 'Required Interfaces' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (requiredInterfaces == null) {
+			requiredInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, CsPackage.COMPONENT__REQUIRED_INTERFACES);
+		}
+		return requiredInterfaces;
 	}
 
 	/**
@@ -708,11 +848,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<ComponentPort> getContainedComponentPorts() {
-		// TODO: implement this method to return the 'Contained Component Ports' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (containedComponentPorts == null) {
+			containedComponentPorts = new EObjectResolvingEList<ComponentPort>(ComponentPort.class, this, CsPackage.COMPONENT__CONTAINED_COMPONENT_PORTS);
+		}
+		return containedComponentPorts;
 	}
 
 	/**
@@ -721,11 +860,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<Part> getContainedParts() {
-		// TODO: implement this method to return the 'Contained Parts' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (containedParts == null) {
+			containedParts = new EObjectResolvingEList<Part>(Part.class, this, CsPackage.COMPONENT__CONTAINED_PARTS);
+		}
+		return containedParts;
 	}
 
 	/**
@@ -734,11 +872,10 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * @generated
 	 */
 	public EList<PhysicalPort> getContainedPhysicalPorts() {
-		// TODO: implement this method to return the 'Contained Physical Ports' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (containedPhysicalPorts == null) {
+			containedPhysicalPorts = new EObjectResolvingEList<PhysicalPort>(PhysicalPort.class, this, CsPackage.COMPONENT__CONTAINED_PHYSICAL_PORTS);
+		}
+		return containedPhysicalPorts;
 	}
 
 	/**
@@ -793,6 +930,33 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.COMPONENT__PROVISIONED_INTERFACE_ALLOCATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProvisionedInterfaceAllocations()).basicAdd(otherEnd, msgs);
+			case CsPackage.COMPONENT__USED_INTERFACE_LINKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsedInterfaceLinks()).basicAdd(otherEnd, msgs);
+			case CsPackage.COMPONENT__USED_INTERFACES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsedInterfaces()).basicAdd(otherEnd, msgs);
+			case CsPackage.COMPONENT__IMPLEMENTED_INTERFACE_LINKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getImplementedInterfaceLinks()).basicAdd(otherEnd, msgs);
+			case CsPackage.COMPONENT__IMPLEMENTED_INTERFACES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getImplementedInterfaces()).basicAdd(otherEnd, msgs);
+			case CsPackage.COMPONENT__PROVISIONED_COMPONENT_ALLOCATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProvisionedComponentAllocations()).basicAdd(otherEnd, msgs);
+			case CsPackage.COMPONENT__PROVISIONING_COMPONENT_ALLOCATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProvisioningComponentAllocations()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -802,12 +966,26 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 				return ((InternalEList<?>)getOwnedFeatures()).basicRemove(otherEnd, msgs);
 			case CsPackage.COMPONENT__OWNED_INTERFACE_ALLOCATIONS:
 				return ((InternalEList<?>)getOwnedInterfaceAllocations()).basicRemove(otherEnd, msgs);
+			case CsPackage.COMPONENT__PROVISIONED_INTERFACE_ALLOCATIONS:
+				return ((InternalEList<?>)getProvisionedInterfaceAllocations()).basicRemove(otherEnd, msgs);
 			case CsPackage.COMPONENT__OWNED_COMMUNICATION_LINKS:
 				return ((InternalEList<?>)getOwnedCommunicationLinks()).basicRemove(otherEnd, msgs);
 			case CsPackage.COMPONENT__OWNED_INTERFACE_USES:
 				return ((InternalEList<?>)getOwnedInterfaceUses()).basicRemove(otherEnd, msgs);
+			case CsPackage.COMPONENT__USED_INTERFACE_LINKS:
+				return ((InternalEList<?>)getUsedInterfaceLinks()).basicRemove(otherEnd, msgs);
+			case CsPackage.COMPONENT__USED_INTERFACES:
+				return ((InternalEList<?>)getUsedInterfaces()).basicRemove(otherEnd, msgs);
 			case CsPackage.COMPONENT__OWNED_INTERFACE_IMPLEMENTATIONS:
 				return ((InternalEList<?>)getOwnedInterfaceImplementations()).basicRemove(otherEnd, msgs);
+			case CsPackage.COMPONENT__IMPLEMENTED_INTERFACE_LINKS:
+				return ((InternalEList<?>)getImplementedInterfaceLinks()).basicRemove(otherEnd, msgs);
+			case CsPackage.COMPONENT__IMPLEMENTED_INTERFACES:
+				return ((InternalEList<?>)getImplementedInterfaces()).basicRemove(otherEnd, msgs);
+			case CsPackage.COMPONENT__PROVISIONED_COMPONENT_ALLOCATIONS:
+				return ((InternalEList<?>)getProvisionedComponentAllocations()).basicRemove(otherEnd, msgs);
+			case CsPackage.COMPONENT__PROVISIONING_COMPONENT_ALLOCATIONS:
+				return ((InternalEList<?>)getProvisioningComponentAllocations()).basicRemove(otherEnd, msgs);
 			case CsPackage.COMPONENT__OWNED_PHYSICAL_PATH:
 				return ((InternalEList<?>)getOwnedPhysicalPath()).basicRemove(otherEnd, msgs);
 			case CsPackage.COMPONENT__OWNED_PHYSICAL_LINKS:
@@ -1039,9 +1217,9 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 			case CsPackage.COMPONENT__OWNED_INTERFACE_ALLOCATIONS:
 				return ownedInterfaceAllocations != null && !ownedInterfaceAllocations.isEmpty();
 			case CsPackage.COMPONENT__PROVISIONED_INTERFACE_ALLOCATIONS:
-				return !getProvisionedInterfaceAllocations().isEmpty();
+				return provisionedInterfaceAllocations != null && !provisionedInterfaceAllocations.isEmpty();
 			case CsPackage.COMPONENT__ALLOCATED_INTERFACES:
-				return !getAllocatedInterfaces().isEmpty();
+				return allocatedInterfaces != null && !allocatedInterfaces.isEmpty();
 			case CsPackage.COMPONENT__OWNED_COMMUNICATION_LINKS:
 				return ownedCommunicationLinks != null && !ownedCommunicationLinks.isEmpty();
 			case CsPackage.COMPONENT__PRODUCE:
@@ -1067,33 +1245,33 @@ public abstract class ComponentImpl extends BlockImpl implements Component {
 			case CsPackage.COMPONENT__OWNED_INTERFACE_USES:
 				return ownedInterfaceUses != null && !ownedInterfaceUses.isEmpty();
 			case CsPackage.COMPONENT__USED_INTERFACE_LINKS:
-				return !getUsedInterfaceLinks().isEmpty();
+				return usedInterfaceLinks != null && !usedInterfaceLinks.isEmpty();
 			case CsPackage.COMPONENT__USED_INTERFACES:
-				return !getUsedInterfaces().isEmpty();
+				return usedInterfaces != null && !usedInterfaces.isEmpty();
 			case CsPackage.COMPONENT__OWNED_INTERFACE_IMPLEMENTATIONS:
 				return ownedInterfaceImplementations != null && !ownedInterfaceImplementations.isEmpty();
 			case CsPackage.COMPONENT__IMPLEMENTED_INTERFACE_LINKS:
-				return !getImplementedInterfaceLinks().isEmpty();
+				return implementedInterfaceLinks != null && !implementedInterfaceLinks.isEmpty();
 			case CsPackage.COMPONENT__IMPLEMENTED_INTERFACES:
-				return !getImplementedInterfaces().isEmpty();
+				return implementedInterfaces != null && !implementedInterfaces.isEmpty();
 			case CsPackage.COMPONENT__PROVISIONED_COMPONENT_ALLOCATIONS:
-				return !getProvisionedComponentAllocations().isEmpty();
+				return provisionedComponentAllocations != null && !provisionedComponentAllocations.isEmpty();
 			case CsPackage.COMPONENT__PROVISIONING_COMPONENT_ALLOCATIONS:
-				return !getProvisioningComponentAllocations().isEmpty();
+				return provisioningComponentAllocations != null && !provisioningComponentAllocations.isEmpty();
 			case CsPackage.COMPONENT__ALLOCATED_COMPONENTS:
-				return !getAllocatedComponents().isEmpty();
+				return allocatedComponents != null && !allocatedComponents.isEmpty();
 			case CsPackage.COMPONENT__ALLOCATING_COMPONENTS:
-				return !getAllocatingComponents().isEmpty();
+				return allocatingComponents != null && !allocatingComponents.isEmpty();
 			case CsPackage.COMPONENT__PROVIDED_INTERFACES:
-				return !getProvidedInterfaces().isEmpty();
+				return providedInterfaces != null && !providedInterfaces.isEmpty();
 			case CsPackage.COMPONENT__REQUIRED_INTERFACES:
-				return !getRequiredInterfaces().isEmpty();
+				return requiredInterfaces != null && !requiredInterfaces.isEmpty();
 			case CsPackage.COMPONENT__CONTAINED_COMPONENT_PORTS:
-				return !getContainedComponentPorts().isEmpty();
+				return containedComponentPorts != null && !containedComponentPorts.isEmpty();
 			case CsPackage.COMPONENT__CONTAINED_PARTS:
-				return !getContainedParts().isEmpty();
+				return containedParts != null && !containedParts.isEmpty();
 			case CsPackage.COMPONENT__CONTAINED_PHYSICAL_PORTS:
-				return !getContainedPhysicalPorts().isEmpty();
+				return containedPhysicalPorts != null && !containedPhysicalPorts.isEmpty();
 			case CsPackage.COMPONENT__OWNED_PHYSICAL_PATH:
 				return ownedPhysicalPath != null && !ownedPhysicalPath.isEmpty();
 			case CsPackage.COMPONENT__OWNED_PHYSICAL_LINKS:

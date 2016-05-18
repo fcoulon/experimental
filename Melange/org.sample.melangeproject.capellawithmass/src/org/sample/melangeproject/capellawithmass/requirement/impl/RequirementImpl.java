@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.sample.melangeproject.capellawithmass.capellacommon.GenericTrace;
@@ -214,16 +213,6 @@ public abstract class RequirementImpl extends NamedElementImpl implements Requir
 	 * @ordered
 	 */
 	protected String feature = FEATURE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRelatedCapellaElements() <em>Related Capella Elements</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelatedCapellaElements()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<CapellaElement> relatedCapellaElements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -447,10 +436,11 @@ public abstract class RequirementImpl extends NamedElementImpl implements Requir
 	 * @generated
 	 */
 	public EList<CapellaElement> getRelatedCapellaElements() {
-		if (relatedCapellaElements == null) {
-			relatedCapellaElements = new EObjectResolvingEList<CapellaElement>(CapellaElement.class, this, RequirementPackage.REQUIREMENT__RELATED_CAPELLA_ELEMENTS);
-		}
-		return relatedCapellaElements;
+		// TODO: implement this method to return the 'Related Capella Elements' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -617,7 +607,7 @@ public abstract class RequirementImpl extends NamedElementImpl implements Requir
 			case RequirementPackage.REQUIREMENT__FEATURE:
 				return FEATURE_EDEFAULT == null ? feature != null : !FEATURE_EDEFAULT.equals(feature);
 			case RequirementPackage.REQUIREMENT__RELATED_CAPELLA_ELEMENTS:
-				return relatedCapellaElements != null && !relatedCapellaElements.isEmpty();
+				return !getRelatedCapellaElements().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

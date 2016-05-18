@@ -132,7 +132,7 @@ public interface PhysicalLink extends AbstractPhysicalPathLink, AbstractPhysical
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Physical Port</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalLink_SourcePhysicalPort()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */
@@ -148,7 +148,7 @@ public interface PhysicalLink extends AbstractPhysicalPathLink, AbstractPhysical
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Physical Port</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalLink_TargetPhysicalPort()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */
@@ -165,7 +165,7 @@ public interface PhysicalLink extends AbstractPhysicalPathLink, AbstractPhysical
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realized Physical Links</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalLink_RealizedPhysicalLinks()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='none' constraints='none' comment/notes='none'"
 	 * @generated
 	 */
@@ -182,7 +182,7 @@ public interface PhysicalLink extends AbstractPhysicalPathLink, AbstractPhysical
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Realizing Physical Links</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalLink_RealizingPhysicalLinks()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='none' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/semantic excludefrom='xmlpivot'"
 	 * @generated

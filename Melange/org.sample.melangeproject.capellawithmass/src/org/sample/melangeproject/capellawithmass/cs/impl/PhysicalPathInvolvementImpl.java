@@ -75,6 +75,36 @@ public class PhysicalPathInvolvementImpl extends RelationshipImpl implements Phy
 	protected EList<PhysicalPathInvolvement> nextInvolvements;
 
 	/**
+	 * The cached value of the '{@link #getPreviousInvolvements() <em>Previous Involvements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreviousInvolvements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PhysicalPathInvolvement> previousInvolvements;
+
+	/**
+	 * The cached value of the '{@link #getInvolvedElement() <em>Involved Element</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvolvedElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected AbstractPathInvolvedElement involvedElement;
+
+	/**
+	 * The cached value of the '{@link #getInvolvedComponent() <em>Involved Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvolvedComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component involvedComponent;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,11 +217,10 @@ public class PhysicalPathInvolvementImpl extends RelationshipImpl implements Phy
 	 * @generated
 	 */
 	public EList<PhysicalPathInvolvement> getPreviousInvolvements() {
-		// TODO: implement this method to return the 'Previous Involvements' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (previousInvolvements == null) {
+			previousInvolvements = new EObjectResolvingEList<PhysicalPathInvolvement>(PhysicalPathInvolvement.class, this, CsPackage.PHYSICAL_PATH_INVOLVEMENT__PREVIOUS_INVOLVEMENTS);
+		}
+		return previousInvolvements;
 	}
 
 	/**
@@ -200,8 +229,15 @@ public class PhysicalPathInvolvementImpl extends RelationshipImpl implements Phy
 	 * @generated
 	 */
 	public AbstractPathInvolvedElement getInvolvedElement() {
-		AbstractPathInvolvedElement involvedElement = basicGetInvolvedElement();
-		return involvedElement != null && involvedElement.eIsProxy() ? (AbstractPathInvolvedElement)eResolveProxy((InternalEObject)involvedElement) : involvedElement;
+		if (involvedElement != null && involvedElement.eIsProxy()) {
+			InternalEObject oldInvolvedElement = (InternalEObject)involvedElement;
+			involvedElement = (AbstractPathInvolvedElement)eResolveProxy(oldInvolvedElement);
+			if (involvedElement != oldInvolvedElement) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.PHYSICAL_PATH_INVOLVEMENT__INVOLVED_ELEMENT, oldInvolvedElement, involvedElement));
+			}
+		}
+		return involvedElement;
 	}
 
 	/**
@@ -210,10 +246,7 @@ public class PhysicalPathInvolvementImpl extends RelationshipImpl implements Phy
 	 * @generated
 	 */
 	public AbstractPathInvolvedElement basicGetInvolvedElement() {
-		// TODO: implement this method to return the 'Involved Element' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return involvedElement;
 	}
 
 	/**
@@ -222,8 +255,15 @@ public class PhysicalPathInvolvementImpl extends RelationshipImpl implements Phy
 	 * @generated
 	 */
 	public Component getInvolvedComponent() {
-		Component involvedComponent = basicGetInvolvedComponent();
-		return involvedComponent != null && involvedComponent.eIsProxy() ? (Component)eResolveProxy((InternalEObject)involvedComponent) : involvedComponent;
+		if (involvedComponent != null && involvedComponent.eIsProxy()) {
+			InternalEObject oldInvolvedComponent = (InternalEObject)involvedComponent;
+			involvedComponent = (Component)eResolveProxy(oldInvolvedComponent);
+			if (involvedComponent != oldInvolvedComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.PHYSICAL_PATH_INVOLVEMENT__INVOLVED_COMPONENT, oldInvolvedComponent, involvedComponent));
+			}
+		}
+		return involvedComponent;
 	}
 
 	/**
@@ -232,10 +272,7 @@ public class PhysicalPathInvolvementImpl extends RelationshipImpl implements Phy
 	 * @generated
 	 */
 	public Component basicGetInvolvedComponent() {
-		// TODO: implement this method to return the 'Involved Component' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return involvedComponent;
 	}
 
 	/**
@@ -325,11 +362,11 @@ public class PhysicalPathInvolvementImpl extends RelationshipImpl implements Phy
 			case CsPackage.PHYSICAL_PATH_INVOLVEMENT__NEXT_INVOLVEMENTS:
 				return nextInvolvements != null && !nextInvolvements.isEmpty();
 			case CsPackage.PHYSICAL_PATH_INVOLVEMENT__PREVIOUS_INVOLVEMENTS:
-				return !getPreviousInvolvements().isEmpty();
+				return previousInvolvements != null && !previousInvolvements.isEmpty();
 			case CsPackage.PHYSICAL_PATH_INVOLVEMENT__INVOLVED_ELEMENT:
-				return basicGetInvolvedElement() != null;
+				return involvedElement != null;
 			case CsPackage.PHYSICAL_PATH_INVOLVEMENT__INVOLVED_COMPONENT:
-				return basicGetInvolvedComponent() != null;
+				return involvedComponent != null;
 		}
 		return super.eIsSet(featureID);
 	}

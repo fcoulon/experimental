@@ -76,6 +76,16 @@ public abstract class SystemComponentImpl extends ComponentImpl implements Syste
 	protected EList<Classifier> dataType;
 
 	/**
+	 * The cached value of the '{@link #getParticipationsInCapabilityRealizations() <em>Participations In Capability Realizations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParticipationsInCapabilityRealizations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SystemComponentCapabilityRealizationInvolvement> participationsInCapabilityRealizations;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,11 +169,10 @@ public abstract class SystemComponentImpl extends ComponentImpl implements Syste
 	 * @generated
 	 */
 	public EList<SystemComponentCapabilityRealizationInvolvement> getParticipationsInCapabilityRealizations() {
-		// TODO: implement this method to return the 'Participations In Capability Realizations' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (participationsInCapabilityRealizations == null) {
+			participationsInCapabilityRealizations = new EObjectResolvingEList<SystemComponentCapabilityRealizationInvolvement>(SystemComponentCapabilityRealizationInvolvement.class, this, CsPackage.SYSTEM_COMPONENT__PARTICIPATIONS_IN_CAPABILITY_REALIZATIONS);
+		}
+		return participationsInCapabilityRealizations;
 	}
 
 	/**
@@ -243,7 +252,7 @@ public abstract class SystemComponentImpl extends ComponentImpl implements Syste
 			case CsPackage.SYSTEM_COMPONENT__DATA_TYPE:
 				return dataType != null && !dataType.isEmpty();
 			case CsPackage.SYSTEM_COMPONENT__PARTICIPATIONS_IN_CAPABILITY_REALIZATIONS:
-				return !getParticipationsInCapabilityRealizations().isEmpty();
+				return participationsInCapabilityRealizations != null && !participationsInCapabilityRealizations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

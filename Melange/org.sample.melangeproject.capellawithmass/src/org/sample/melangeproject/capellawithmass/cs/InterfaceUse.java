@@ -37,7 +37,7 @@ public interface InterfaceUse extends Relationship {
 	 * @return the value of the '<em>Interface User</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterfaceUse_InterfaceUser()
 	 * @see org.sample.melangeproject.capellawithmass.cs.Component#getUsedInterfaceLinks
-	 * @model opposite="usedInterfaceLinks" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="usedInterfaceLinks" required="true" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/UML2Mapping featureName='client' featureOwner='Dependency'"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='interfaceUser'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='Component that uses the interface\r\n[source: Capella study]' constraints='none' comment/notes='none'"

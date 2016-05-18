@@ -2,8 +2,13 @@
  */
 package org.sample.melangeproject.capellawithmass.cs.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.sample.melangeproject.capellawithmass.capellacore.impl.AllocationImpl;
 
@@ -27,6 +32,26 @@ import org.sample.melangeproject.capellawithmass.cs.InterfaceAllocator;
  * @generated
  */
 public abstract class InterfaceAllocationImpl extends AllocationImpl implements InterfaceAllocation {
+	/**
+	 * The cached value of the '{@link #getAllocatedInterface() <em>Allocated Interface</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatedInterface()
+	 * @generated
+	 * @ordered
+	 */
+	protected Interface allocatedInterface;
+
+	/**
+	 * The cached value of the '{@link #getAllocatingInterfaceAllocator() <em>Allocating Interface Allocator</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllocatingInterfaceAllocator()
+	 * @generated
+	 * @ordered
+	 */
+	protected InterfaceAllocator allocatingInterfaceAllocator;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,8 +77,15 @@ public abstract class InterfaceAllocationImpl extends AllocationImpl implements 
 	 * @generated
 	 */
 	public Interface getAllocatedInterface() {
-		Interface allocatedInterface = basicGetAllocatedInterface();
-		return allocatedInterface != null && allocatedInterface.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)allocatedInterface) : allocatedInterface;
+		if (allocatedInterface != null && allocatedInterface.eIsProxy()) {
+			InternalEObject oldAllocatedInterface = (InternalEObject)allocatedInterface;
+			allocatedInterface = (Interface)eResolveProxy(oldAllocatedInterface);
+			if (allocatedInterface != oldAllocatedInterface) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.INTERFACE_ALLOCATION__ALLOCATED_INTERFACE, oldAllocatedInterface, allocatedInterface));
+			}
+		}
+		return allocatedInterface;
 	}
 
 	/**
@@ -62,10 +94,22 @@ public abstract class InterfaceAllocationImpl extends AllocationImpl implements 
 	 * @generated
 	 */
 	public Interface basicGetAllocatedInterface() {
-		// TODO: implement this method to return the 'Allocated Interface' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return allocatedInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAllocatedInterface(Interface newAllocatedInterface, NotificationChain msgs) {
+		Interface oldAllocatedInterface = allocatedInterface;
+		allocatedInterface = newAllocatedInterface;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CsPackage.INTERFACE_ALLOCATION__ALLOCATED_INTERFACE, oldAllocatedInterface, newAllocatedInterface);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -74,8 +118,15 @@ public abstract class InterfaceAllocationImpl extends AllocationImpl implements 
 	 * @generated
 	 */
 	public InterfaceAllocator getAllocatingInterfaceAllocator() {
-		InterfaceAllocator allocatingInterfaceAllocator = basicGetAllocatingInterfaceAllocator();
-		return allocatingInterfaceAllocator != null && allocatingInterfaceAllocator.eIsProxy() ? (InterfaceAllocator)eResolveProxy((InternalEObject)allocatingInterfaceAllocator) : allocatingInterfaceAllocator;
+		if (allocatingInterfaceAllocator != null && allocatingInterfaceAllocator.eIsProxy()) {
+			InternalEObject oldAllocatingInterfaceAllocator = (InternalEObject)allocatingInterfaceAllocator;
+			allocatingInterfaceAllocator = (InterfaceAllocator)eResolveProxy(oldAllocatingInterfaceAllocator);
+			if (allocatingInterfaceAllocator != oldAllocatingInterfaceAllocator) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CsPackage.INTERFACE_ALLOCATION__ALLOCATING_INTERFACE_ALLOCATOR, oldAllocatingInterfaceAllocator, allocatingInterfaceAllocator));
+			}
+		}
+		return allocatingInterfaceAllocator;
 	}
 
 	/**
@@ -84,10 +135,58 @@ public abstract class InterfaceAllocationImpl extends AllocationImpl implements 
 	 * @generated
 	 */
 	public InterfaceAllocator basicGetAllocatingInterfaceAllocator() {
-		// TODO: implement this method to return the 'Allocating Interface Allocator' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return allocatingInterfaceAllocator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAllocatingInterfaceAllocator(InterfaceAllocator newAllocatingInterfaceAllocator, NotificationChain msgs) {
+		InterfaceAllocator oldAllocatingInterfaceAllocator = allocatingInterfaceAllocator;
+		allocatingInterfaceAllocator = newAllocatingInterfaceAllocator;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CsPackage.INTERFACE_ALLOCATION__ALLOCATING_INTERFACE_ALLOCATOR, oldAllocatingInterfaceAllocator, newAllocatingInterfaceAllocator);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.INTERFACE_ALLOCATION__ALLOCATED_INTERFACE:
+				if (allocatedInterface != null)
+					msgs = ((InternalEObject)allocatedInterface).eInverseRemove(this, CsPackage.INTERFACE__PROVISIONING_INTERFACE_ALLOCATIONS, Interface.class, msgs);
+				return basicSetAllocatedInterface((Interface)otherEnd, msgs);
+			case CsPackage.INTERFACE_ALLOCATION__ALLOCATING_INTERFACE_ALLOCATOR:
+				if (allocatingInterfaceAllocator != null)
+					msgs = ((InternalEObject)allocatingInterfaceAllocator).eInverseRemove(this, CsPackage.INTERFACE_ALLOCATOR__PROVISIONED_INTERFACE_ALLOCATIONS, InterfaceAllocator.class, msgs);
+				return basicSetAllocatingInterfaceAllocator((InterfaceAllocator)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CsPackage.INTERFACE_ALLOCATION__ALLOCATED_INTERFACE:
+				return basicSetAllocatedInterface(null, msgs);
+			case CsPackage.INTERFACE_ALLOCATION__ALLOCATING_INTERFACE_ALLOCATOR:
+				return basicSetAllocatingInterfaceAllocator(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -117,9 +216,9 @@ public abstract class InterfaceAllocationImpl extends AllocationImpl implements 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CsPackage.INTERFACE_ALLOCATION__ALLOCATED_INTERFACE:
-				return basicGetAllocatedInterface() != null;
+				return allocatedInterface != null;
 			case CsPackage.INTERFACE_ALLOCATION__ALLOCATING_INTERFACE_ALLOCATOR:
-				return basicGetAllocatingInterfaceAllocator() != null;
+				return allocatingInterfaceAllocator != null;
 		}
 		return super.eIsSet(featureID);
 	}

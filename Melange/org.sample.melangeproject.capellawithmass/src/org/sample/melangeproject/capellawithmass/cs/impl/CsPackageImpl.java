@@ -25,6 +25,10 @@ import org.sample.melangeproject.capellawithmass.capellacore.CapellacorePackage;
 
 import org.sample.melangeproject.capellawithmass.capellacore.impl.CapellacorePackageImpl;
 
+import org.sample.melangeproject.capellawithmass.capellamodeller.CapellamodellerPackage;
+
+import org.sample.melangeproject.capellawithmass.capellamodeller.impl.CapellamodellerPackageImpl;
+
 import org.sample.melangeproject.capellawithmass.cs.AbstractActor;
 import org.sample.melangeproject.capellawithmass.cs.AbstractDeploymentLink;
 import org.sample.melangeproject.capellawithmass.cs.AbstractPathInvolvedElement;
@@ -126,6 +130,10 @@ import org.sample.melangeproject.capellawithmass.pa.impl.PaPackageImpl;
 import org.sample.melangeproject.capellawithmass.requirement.RequirementPackage;
 
 import org.sample.melangeproject.capellawithmass.requirement.impl.RequirementPackageImpl;
+
+import org.sample.melangeproject.capellawithmass.sharedmodel.SharedmodelPackage;
+
+import org.sample.melangeproject.capellawithmass.sharedmodel.impl.SharedmodelPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -454,69 +462,75 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		RequirementPackageImpl theRequirementPackage = (RequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI) instanceof RequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI) : RequirementPackage.eINSTANCE);
 		EpbsPackageImpl theEpbsPackage = (EpbsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EpbsPackage.eNS_URI) instanceof EpbsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EpbsPackage.eNS_URI) : EpbsPackage.eINSTANCE);
-		CtxPackageImpl theCtxPackage = (CtxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) instanceof CtxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) : CtxPackage.eINSTANCE);
-		PaPackageImpl thePaPackage = (PaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) instanceof PaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) : PaPackage.eINSTANCE);
-		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
-		LaPackageImpl theLaPackage = (LaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) instanceof LaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) : LaPackage.eINSTANCE);
+		CapellamodellerPackageImpl theCapellamodellerPackage = (CapellamodellerPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellamodellerPackage.eNS_URI) instanceof CapellamodellerPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellamodellerPackage.eNS_URI) : CapellamodellerPackage.eINSTANCE);
 		EmdePackageImpl theEmdePackage = (EmdePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI) instanceof EmdePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI) : EmdePackage.eINSTANCE);
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
-		OaPackageImpl theOaPackage = (OaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) instanceof OaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) : OaPackage.eINSTANCE);
-		CapellacorePackageImpl theCapellacorePackage = (CapellacorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) instanceof CapellacorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) : CapellacorePackage.eINSTANCE);
-		InteractionPackageImpl theInteractionPackage = (InteractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) instanceof InteractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) : InteractionPackage.eINSTANCE);
+		ActivityPackageImpl theActivityPackage = (ActivityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) instanceof ActivityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) : ActivityPackage.eINSTANCE);
+		LaPackageImpl theLaPackage = (LaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) instanceof LaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LaPackage.eNS_URI) : LaPackage.eINSTANCE);
 		InformationPackageImpl theInformationPackage = (InformationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InformationPackage.eNS_URI) instanceof InformationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InformationPackage.eNS_URI) : InformationPackage.eINSTANCE);
 		CommunicationPackageImpl theCommunicationPackage = (CommunicationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI) instanceof CommunicationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CommunicationPackage.eNS_URI) : CommunicationPackage.eINSTANCE);
 		DatatypePackageImpl theDatatypePackage = (DatatypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypePackage.eNS_URI) instanceof DatatypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypePackage.eNS_URI) : DatatypePackage.eINSTANCE);
 		DatavaluePackageImpl theDatavaluePackage = (DatavaluePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatavaluePackage.eNS_URI) instanceof DatavaluePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatavaluePackage.eNS_URI) : DatavaluePackage.eINSTANCE);
-		ActivityPackageImpl theActivityPackage = (ActivityPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) instanceof ActivityPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActivityPackage.eNS_URI) : ActivityPackage.eINSTANCE);
-		CapellacommonPackageImpl theCapellacommonPackage = (CapellacommonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) instanceof CapellacommonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) : CapellacommonPackage.eINSTANCE);
-		FaPackageImpl theFaPackage = (FaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) instanceof FaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) : FaPackage.eINSTANCE);
 		ModellingcorePackageImpl theModellingcorePackage = (ModellingcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModellingcorePackage.eNS_URI) instanceof ModellingcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModellingcorePackage.eNS_URI) : ModellingcorePackage.eINSTANCE);
+		CapellacorePackageImpl theCapellacorePackage = (CapellacorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) instanceof CapellacorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacorePackage.eNS_URI) : CapellacorePackage.eINSTANCE);
+		SharedmodelPackageImpl theSharedmodelPackage = (SharedmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SharedmodelPackage.eNS_URI) instanceof SharedmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SharedmodelPackage.eNS_URI) : SharedmodelPackage.eINSTANCE);
+		CapellacommonPackageImpl theCapellacommonPackage = (CapellacommonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) instanceof CapellacommonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CapellacommonPackage.eNS_URI) : CapellacommonPackage.eINSTANCE);
+		InteractionPackageImpl theInteractionPackage = (InteractionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) instanceof InteractionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InteractionPackage.eNS_URI) : InteractionPackage.eINSTANCE);
+		FaPackageImpl theFaPackage = (FaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) instanceof FaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI) : FaPackage.eINSTANCE);
+		CtxPackageImpl theCtxPackage = (CtxPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) instanceof CtxPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CtxPackage.eNS_URI) : CtxPackage.eINSTANCE);
+		PaPackageImpl thePaPackage = (PaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) instanceof PaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PaPackage.eNS_URI) : PaPackage.eINSTANCE);
+		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
+		OaPackageImpl theOaPackage = (OaPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) instanceof OaPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OaPackage.eNS_URI) : OaPackage.eINSTANCE);
+		RequirementPackageImpl theRequirementPackage = (RequirementPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI) instanceof RequirementPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RequirementPackage.eNS_URI) : RequirementPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCsPackage.createPackageContents();
-		theRequirementPackage.createPackageContents();
 		theEpbsPackage.createPackageContents();
-		theCtxPackage.createPackageContents();
-		thePaPackage.createPackageContents();
-		theDeploymentPackage.createPackageContents();
-		theLaPackage.createPackageContents();
+		theCapellamodellerPackage.createPackageContents();
 		theEmdePackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
-		theOaPackage.createPackageContents();
-		theCapellacorePackage.createPackageContents();
-		theInteractionPackage.createPackageContents();
+		theActivityPackage.createPackageContents();
+		theLaPackage.createPackageContents();
 		theInformationPackage.createPackageContents();
 		theCommunicationPackage.createPackageContents();
 		theDatatypePackage.createPackageContents();
 		theDatavaluePackage.createPackageContents();
-		theActivityPackage.createPackageContents();
-		theCapellacommonPackage.createPackageContents();
-		theFaPackage.createPackageContents();
 		theModellingcorePackage.createPackageContents();
+		theCapellacorePackage.createPackageContents();
+		theSharedmodelPackage.createPackageContents();
+		theCapellacommonPackage.createPackageContents();
+		theInteractionPackage.createPackageContents();
+		theFaPackage.createPackageContents();
+		theCtxPackage.createPackageContents();
+		thePaPackage.createPackageContents();
+		theDeploymentPackage.createPackageContents();
+		theOaPackage.createPackageContents();
+		theRequirementPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCsPackage.initializePackageContents();
-		theRequirementPackage.initializePackageContents();
 		theEpbsPackage.initializePackageContents();
-		theCtxPackage.initializePackageContents();
-		thePaPackage.initializePackageContents();
-		theDeploymentPackage.initializePackageContents();
-		theLaPackage.initializePackageContents();
+		theCapellamodellerPackage.initializePackageContents();
 		theEmdePackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
-		theOaPackage.initializePackageContents();
-		theCapellacorePackage.initializePackageContents();
-		theInteractionPackage.initializePackageContents();
+		theActivityPackage.initializePackageContents();
+		theLaPackage.initializePackageContents();
 		theInformationPackage.initializePackageContents();
 		theCommunicationPackage.initializePackageContents();
 		theDatatypePackage.initializePackageContents();
 		theDatavaluePackage.initializePackageContents();
-		theActivityPackage.initializePackageContents();
-		theCapellacommonPackage.initializePackageContents();
-		theFaPackage.initializePackageContents();
 		theModellingcorePackage.initializePackageContents();
+		theCapellacorePackage.initializePackageContents();
+		theSharedmodelPackage.initializePackageContents();
+		theCapellacommonPackage.initializePackageContents();
+		theInteractionPackage.initializePackageContents();
+		theFaPackage.initializePackageContents();
+		theCtxPackage.initializePackageContents();
+		thePaPackage.initializePackageContents();
+		theDeploymentPackage.initializePackageContents();
+		theOaPackage.initializePackageContents();
+		theRequirementPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCsPackage.freeze();
@@ -2265,10 +2279,10 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEReference(getBlockArchitecture_OwnedAbstractCapabilityPkg(), theCapellacommonPackage.getAbstractCapabilityPkg(), null, "ownedAbstractCapabilityPkg", null, 0, 1, BlockArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBlockArchitecture_OwnedInterfacePkg(), this.getInterfacePkg(), null, "ownedInterfacePkg", null, 0, 1, BlockArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBlockArchitecture_OwnedDataPkg(), theInformationPackage.getDataPkg(), null, "ownedDataPkg", null, 0, 1, BlockArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBlockArchitecture_ProvisionedArchitectureAllocations(), this.getArchitectureAllocation(), this.getArchitectureAllocation_AllocatingArchitecture(), "provisionedArchitectureAllocations", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBlockArchitecture_ProvisioningArchitectureAllocations(), this.getArchitectureAllocation(), this.getArchitectureAllocation_AllocatedArchitecture(), "provisioningArchitectureAllocations", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBlockArchitecture_AllocatedArchitectures(), this.getBlockArchitecture(), null, "allocatedArchitectures", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getBlockArchitecture_AllocatingArchitectures(), this.getBlockArchitecture(), null, "allocatingArchitectures", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBlockArchitecture_ProvisionedArchitectureAllocations(), this.getArchitectureAllocation(), this.getArchitectureAllocation_AllocatingArchitecture(), "provisionedArchitectureAllocations", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBlockArchitecture_ProvisioningArchitectureAllocations(), this.getArchitectureAllocation(), this.getArchitectureAllocation_AllocatedArchitecture(), "provisioningArchitectureAllocations", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBlockArchitecture_AllocatedArchitectures(), this.getBlockArchitecture(), null, "allocatedArchitectures", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getBlockArchitecture_AllocatingArchitectures(), this.getBlockArchitecture(), null, "allocatingArchitectures", null, 0, -1, BlockArchitecture.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_OwnedAbstractCapabilityPkg(), theCapellacommonPackage.getAbstractCapabilityPkg(), null, "ownedAbstractCapabilityPkg", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2280,20 +2294,20 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponent_OwnedInterfaceUses(), this.getInterfaceUse(), null, "ownedInterfaceUses", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_UsedInterfaceLinks(), this.getInterfaceUse(), this.getInterfaceUse_InterfaceUser(), "usedInterfaceLinks", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_UsedInterfaces(), this.getInterface(), this.getInterface_UserComponents(), "usedInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_UsedInterfaceLinks(), this.getInterfaceUse(), this.getInterfaceUse_InterfaceUser(), "usedInterfaceLinks", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_UsedInterfaces(), this.getInterface(), this.getInterface_UserComponents(), "usedInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_OwnedInterfaceImplementations(), this.getInterfaceImplementation(), null, "ownedInterfaceImplementations", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ImplementedInterfaceLinks(), this.getInterfaceImplementation(), this.getInterfaceImplementation_InterfaceImplementor(), "implementedInterfaceLinks", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ImplementedInterfaces(), this.getInterface(), this.getInterface_ImplementorComponents(), "implementedInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ProvisionedComponentAllocations(), this.getComponentAllocation(), this.getComponentAllocation_AllocatingComponent(), "provisionedComponentAllocations", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ProvisioningComponentAllocations(), this.getComponentAllocation(), this.getComponentAllocation_AllocatedComponent(), "provisioningComponentAllocations", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_AllocatedComponents(), this.getComponent(), null, "allocatedComponents", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_AllocatingComponents(), this.getComponent(), null, "allocatingComponents", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ProvidedInterfaces(), this.getInterface(), null, "providedInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ContainedComponentPorts(), theFaPackage.getComponentPort(), null, "containedComponentPorts", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ContainedParts(), this.getPart(), null, "containedParts", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ContainedPhysicalPorts(), this.getPhysicalPort(), null, "containedPhysicalPorts", null, 0, -1, Component.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ImplementedInterfaceLinks(), this.getInterfaceImplementation(), this.getInterfaceImplementation_InterfaceImplementor(), "implementedInterfaceLinks", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ImplementedInterfaces(), this.getInterface(), this.getInterface_ImplementorComponents(), "implementedInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ProvisionedComponentAllocations(), this.getComponentAllocation(), this.getComponentAllocation_AllocatingComponent(), "provisionedComponentAllocations", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ProvisioningComponentAllocations(), this.getComponentAllocation(), this.getComponentAllocation_AllocatedComponent(), "provisioningComponentAllocations", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_AllocatedComponents(), this.getComponent(), null, "allocatedComponents", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_AllocatingComponents(), this.getComponent(), null, "allocatingComponents", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ProvidedInterfaces(), this.getInterface(), null, "providedInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ContainedComponentPorts(), theFaPackage.getComponentPort(), null, "containedComponentPorts", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ContainedParts(), this.getPart(), null, "containedParts", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ContainedPhysicalPorts(), this.getPhysicalPort(), null, "containedPhysicalPorts", null, 0, -1, Component.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_OwnedPhysicalPath(), this.getPhysicalPath(), null, "ownedPhysicalPath", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_OwnedPhysicalLinks(), this.getPhysicalLink(), null, "ownedPhysicalLinks", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_OwnedPhysicalLinkCategories(), this.getPhysicalLinkCategory(), null, "ownedPhysicalLinkCategories", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2301,11 +2315,11 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEClass(abstractActorEClass, AbstractActor.class, "AbstractActor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(partEClass, Part.class, "Part", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPart_ProvidedInterfaces(), this.getInterface(), null, "providedInterfaces", null, 0, -1, Part.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPart_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Part.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPart_ProvidedInterfaces(), this.getInterface(), null, "providedInterfaces", null, 0, -1, Part.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPart_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Part.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPart_OwnedDeploymentLinks(), this.getAbstractDeploymentLink(), null, "ownedDeploymentLinks", null, 0, -1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPart_DeployedParts(), this.getPart(), null, "deployedParts", null, 0, -1, Part.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPart_DeployingParts(), this.getPart(), null, "deployingParts", null, 0, -1, Part.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPart_DeployedParts(), this.getPart(), null, "deployedParts", null, 0, -1, Part.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPart_DeployingParts(), this.getPart(), null, "deployingParts", null, 0, -1, Part.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPart_OwnedAbstractType(), theModellingcorePackage.getAbstractType(), null, "ownedAbstractType", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPart_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPart_MaxValue(), ecorePackage.getEInt(), "maxValue", null, 0, 1, Part.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2321,17 +2335,17 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		addEOperation(partEClass, null, "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(architectureAllocationEClass, ArchitectureAllocation.class, "ArchitectureAllocation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArchitectureAllocation_AllocatedArchitecture(), this.getBlockArchitecture(), this.getBlockArchitecture_ProvisioningArchitectureAllocations(), "allocatedArchitecture", null, 1, 1, ArchitectureAllocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getArchitectureAllocation_AllocatingArchitecture(), this.getBlockArchitecture(), this.getBlockArchitecture_ProvisionedArchitectureAllocations(), "allocatingArchitecture", null, 1, 1, ArchitectureAllocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getArchitectureAllocation_AllocatedArchitecture(), this.getBlockArchitecture(), this.getBlockArchitecture_ProvisioningArchitectureAllocations(), "allocatedArchitecture", null, 1, 1, ArchitectureAllocation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getArchitectureAllocation_AllocatingArchitecture(), this.getBlockArchitecture(), this.getBlockArchitecture_ProvisionedArchitectureAllocations(), "allocatingArchitecture", null, 1, 1, ArchitectureAllocation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentAllocationEClass, ComponentAllocation.class, "ComponentAllocation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentAllocation_AllocatedComponent(), this.getComponent(), this.getComponent_ProvisioningComponentAllocations(), "allocatedComponent", null, 0, 1, ComponentAllocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentAllocation_AllocatingComponent(), this.getComponent(), this.getComponent_ProvisionedComponentAllocations(), "allocatingComponent", null, 0, 1, ComponentAllocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentAllocation_AllocatedComponent(), this.getComponent(), this.getComponent_ProvisioningComponentAllocations(), "allocatedComponent", null, 0, 1, ComponentAllocation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentAllocation_AllocatingComponent(), this.getComponent(), this.getComponent_ProvisionedComponentAllocations(), "allocatingComponent", null, 0, 1, ComponentAllocation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(systemComponentEClass, SystemComponent.class, "SystemComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSystemComponent_DataComponent(), ecorePackage.getEBoolean(), "dataComponent", null, 0, 1, SystemComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSystemComponent_DataType(), theCapellacorePackage.getClassifier(), null, "dataType", null, 0, -1, SystemComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSystemComponent_ParticipationsInCapabilityRealizations(), this.getSystemComponentCapabilityRealizationInvolvement(), null, "participationsInCapabilityRealizations", null, 0, -1, SystemComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getSystemComponent_ParticipationsInCapabilityRealizations(), this.getSystemComponentCapabilityRealizationInvolvement(), null, "participationsInCapabilityRealizations", null, 0, -1, SystemComponent.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfacePkgEClass, InterfacePkg.class, "InterfacePkg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfacePkg_OwnedInterfaces(), this.getInterface(), null, "ownedInterfaces", null, 0, -1, InterfacePkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2340,30 +2354,30 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInterface_Mechanism(), ecorePackage.getEString(), "mechanism", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInterface_Structural(), ecorePackage.getEBoolean(), "structural", "true", 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_ImplementorComponents(), this.getComponent(), this.getComponent_ImplementedInterfaces(), "implementorComponents", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_UserComponents(), this.getComponent(), this.getComponent_UsedInterfaces(), "userComponents", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_InterfaceImplementations(), this.getInterfaceImplementation(), null, "interfaceImplementations", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_InterfaceUses(), this.getInterfaceUse(), null, "interfaceUses", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_ProvisioningInterfaceAllocations(), this.getInterfaceAllocation(), this.getInterfaceAllocation_AllocatedInterface(), "provisioningInterfaceAllocations", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_AllocatingInterfaces(), this.getInterface(), null, "allocatingInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_AllocatingComponents(), this.getComponent(), null, "allocatingComponents", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_ExchangeItems(), theInformationPackage.getExchangeItem(), null, "exchangeItems", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_ImplementorComponents(), this.getComponent(), this.getComponent_ImplementedInterfaces(), "implementorComponents", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_UserComponents(), this.getComponent(), this.getComponent_UsedInterfaces(), "userComponents", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_InterfaceImplementations(), this.getInterfaceImplementation(), null, "interfaceImplementations", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_InterfaceUses(), this.getInterfaceUse(), null, "interfaceUses", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_ProvisioningInterfaceAllocations(), this.getInterfaceAllocation(), this.getInterfaceAllocation_AllocatedInterface(), "provisioningInterfaceAllocations", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_AllocatingInterfaces(), this.getInterface(), null, "allocatingInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_AllocatingComponents(), this.getComponent(), null, "allocatingComponents", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_ExchangeItems(), theInformationPackage.getExchangeItem(), null, "exchangeItems", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getInterface_OwnedExchangeItemAllocations(), this.getExchangeItemAllocation(), null, "ownedExchangeItemAllocations", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_RequiringComponents(), this.getComponent(), null, "requiringComponents", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_RequiringComponentPorts(), theFaPackage.getComponentPort(), null, "requiringComponentPorts", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_ProvidingComponents(), this.getComponent(), null, "providingComponents", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_ProvidingComponentPorts(), theFaPackage.getComponentPort(), null, "providingComponentPorts", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_RealizingLogicalInterfaces(), this.getInterface(), null, "realizingLogicalInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_RealizedContextInterfaces(), this.getInterface(), null, "realizedContextInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_RealizingPhysicalInterfaces(), this.getInterface(), null, "realizingPhysicalInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterface_RealizedLogicalInterfaces(), this.getInterface(), null, "realizedLogicalInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_RequiringComponents(), this.getComponent(), null, "requiringComponents", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_RequiringComponentPorts(), theFaPackage.getComponentPort(), null, "requiringComponentPorts", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_ProvidingComponents(), this.getComponent(), null, "providingComponents", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_ProvidingComponentPorts(), theFaPackage.getComponentPort(), null, "providingComponentPorts", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_RealizingLogicalInterfaces(), this.getInterface(), null, "realizingLogicalInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_RealizedContextInterfaces(), this.getInterface(), null, "realizedContextInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_RealizingPhysicalInterfaces(), this.getInterface(), null, "realizingPhysicalInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_RealizedLogicalInterfaces(), this.getInterface(), null, "realizedLogicalInterfaces", null, 0, -1, Interface.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceImplementationEClass, InterfaceImplementation.class, "InterfaceImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInterfaceImplementation_InterfaceImplementor(), this.getComponent(), this.getComponent_ImplementedInterfaceLinks(), "interfaceImplementor", null, 1, 1, InterfaceImplementation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceImplementation_InterfaceImplementor(), this.getComponent(), this.getComponent_ImplementedInterfaceLinks(), "interfaceImplementor", null, 1, 1, InterfaceImplementation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getInterfaceImplementation_ImplementedInterface(), this.getInterface(), null, "implementedInterface", null, 1, 1, InterfaceImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceUseEClass, InterfaceUse.class, "InterfaceUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInterfaceUse_InterfaceUser(), this.getComponent(), this.getComponent_UsedInterfaceLinks(), "interfaceUser", null, 1, 1, InterfaceUse.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceUse_InterfaceUser(), this.getComponent(), this.getComponent_UsedInterfaceLinks(), "interfaceUser", null, 1, 1, InterfaceUse.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getInterfaceUse_UsedInterface(), this.getInterface(), null, "usedInterface", null, 1, 1, InterfaceUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providedInterfaceLinkEClass, ProvidedInterfaceLink.class, "ProvidedInterfaceLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2373,13 +2387,13 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEReference(getRequiredInterfaceLink_Interface(), this.getInterface(), null, "interface", null, 1, 1, RequiredInterfaceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceAllocationEClass, InterfaceAllocation.class, "InterfaceAllocation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInterfaceAllocation_AllocatedInterface(), this.getInterface(), this.getInterface_ProvisioningInterfaceAllocations(), "allocatedInterface", null, 1, 1, InterfaceAllocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterfaceAllocation_AllocatingInterfaceAllocator(), this.getInterfaceAllocator(), this.getInterfaceAllocator_ProvisionedInterfaceAllocations(), "allocatingInterfaceAllocator", null, 1, 1, InterfaceAllocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getInterfaceAllocation_AllocatedInterface(), this.getInterface(), this.getInterface_ProvisioningInterfaceAllocations(), "allocatedInterface", null, 1, 1, InterfaceAllocation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceAllocation_AllocatingInterfaceAllocator(), this.getInterfaceAllocator(), this.getInterfaceAllocator_ProvisionedInterfaceAllocations(), "allocatingInterfaceAllocator", null, 1, 1, InterfaceAllocation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(interfaceAllocatorEClass, InterfaceAllocator.class, "InterfaceAllocator", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfaceAllocator_OwnedInterfaceAllocations(), this.getInterfaceAllocation(), null, "ownedInterfaceAllocations", null, 0, -1, InterfaceAllocator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInterfaceAllocator_ProvisionedInterfaceAllocations(), this.getInterfaceAllocation(), this.getInterfaceAllocation_AllocatingInterfaceAllocator(), "provisionedInterfaceAllocations", null, 0, -1, InterfaceAllocator.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getInterfaceAllocator_AllocatedInterfaces(), this.getInterface(), null, "allocatedInterfaces", null, 0, -1, InterfaceAllocator.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceAllocator_ProvisionedInterfaceAllocations(), this.getInterfaceAllocation(), this.getInterfaceAllocation_AllocatingInterfaceAllocator(), "provisionedInterfaceAllocations", null, 0, -1, InterfaceAllocator.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceAllocator_AllocatedInterfaces(), this.getInterface(), null, "allocatedInterfaces", null, 0, -1, InterfaceAllocator.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorCapabilityRealizationInvolvementEClass, ActorCapabilityRealizationInvolvement.class, "ActorCapabilityRealizationInvolvement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2391,13 +2405,13 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEAttribute(getExchangeItemAllocation_SendProtocol(), theCommunicationPackage.getCommunicationLinkProtocol(), "sendProtocol", null, 0, 1, ExchangeItemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExchangeItemAllocation_ReceiveProtocol(), theCommunicationPackage.getCommunicationLinkProtocol(), "receiveProtocol", null, 0, 1, ExchangeItemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExchangeItemAllocation_AllocatedItem(), theInformationPackage.getExchangeItem(), null, "allocatedItem", null, 0, 1, ExchangeItemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExchangeItemAllocation_AllocatingInterface(), this.getInterface(), null, "allocatingInterface", null, 0, 1, ExchangeItemAllocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getExchangeItemAllocation_AllocatingInterface(), this.getInterface(), null, "allocatingInterface", null, 0, 1, ExchangeItemAllocation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(deployableElementEClass, DeployableElement.class, "DeployableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDeployableElement_DeployingLinks(), this.getAbstractDeploymentLink(), null, "deployingLinks", null, 0, -1, DeployableElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDeployableElement_DeployingLinks(), this.getAbstractDeploymentLink(), null, "deployingLinks", null, 0, -1, DeployableElement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(deploymentTargetEClass, DeploymentTarget.class, "DeploymentTarget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDeploymentTarget_DeploymentLinks(), this.getAbstractDeploymentLink(), null, "deploymentLinks", null, 0, -1, DeploymentTarget.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDeploymentTarget_DeploymentLinks(), this.getAbstractDeploymentLink(), null, "deploymentLinks", null, 0, -1, DeploymentTarget.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractDeploymentLinkEClass, AbstractDeploymentLink.class, "AbstractDeploymentLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractDeploymentLink_DeployedElement(), this.getDeployableElement(), null, "deployedElement", null, 1, 1, AbstractDeploymentLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2406,10 +2420,10 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEClass(abstractPathInvolvedElementEClass, AbstractPathInvolvedElement.class, "AbstractPathInvolvedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(abstractPhysicalArtifactEClass, AbstractPhysicalArtifact.class, "AbstractPhysicalArtifact", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractPhysicalArtifact_AllocatorConfigurationItems(), theEpbsPackage.getConfigurationItem(), theEpbsPackage.getConfigurationItem_AllocatedPhysicalArtifacts(), "allocatorConfigurationItems", null, 0, -1, AbstractPhysicalArtifact.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractPhysicalArtifact_AllocatorConfigurationItems(), theEpbsPackage.getConfigurationItem(), theEpbsPackage.getConfigurationItem_AllocatedPhysicalArtifacts(), "allocatorConfigurationItems", null, 0, -1, AbstractPhysicalArtifact.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractPhysicalLinkEndEClass, AbstractPhysicalLinkEnd.class, "AbstractPhysicalLinkEnd", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractPhysicalLinkEnd_InvolvedLinks(), this.getPhysicalLink(), null, "involvedLinks", null, 0, -1, AbstractPhysicalLinkEnd.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractPhysicalLinkEnd_InvolvedLinks(), this.getPhysicalLink(), null, "involvedLinks", null, 0, -1, AbstractPhysicalLinkEnd.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractPhysicalPathLinkEClass, AbstractPhysicalPathLink.class, "AbstractPhysicalPathLink", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2419,10 +2433,10 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEReference(getPhysicalLink_OwnedPhysicalLinkEnds(), this.getPhysicalLinkEnd(), null, "ownedPhysicalLinkEnds", null, 0, -1, PhysicalLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhysicalLink_OwnedPhysicalLinkRealizations(), this.getPhysicalLinkRealization(), null, "ownedPhysicalLinkRealizations", null, 0, -1, PhysicalLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhysicalLink_Categories(), this.getPhysicalLinkCategory(), this.getPhysicalLinkCategory_Links(), "categories", null, 0, -1, PhysicalLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalLink_SourcePhysicalPort(), this.getPhysicalPort(), null, "sourcePhysicalPort", null, 0, 1, PhysicalLink.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalLink_TargetPhysicalPort(), this.getPhysicalPort(), null, "targetPhysicalPort", null, 0, 1, PhysicalLink.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalLink_RealizedPhysicalLinks(), this.getPhysicalLink(), null, "realizedPhysicalLinks", null, 0, -1, PhysicalLink.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalLink_RealizingPhysicalLinks(), this.getPhysicalLink(), null, "realizingPhysicalLinks", null, 0, -1, PhysicalLink.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalLink_SourcePhysicalPort(), this.getPhysicalPort(), null, "sourcePhysicalPort", null, 0, 1, PhysicalLink.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalLink_TargetPhysicalPort(), this.getPhysicalPort(), null, "targetPhysicalPort", null, 0, 1, PhysicalLink.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalLink_RealizedPhysicalLinks(), this.getPhysicalLink(), null, "realizedPhysicalLinks", null, 0, -1, PhysicalLink.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalLink_RealizingPhysicalLinks(), this.getPhysicalLink(), null, "realizingPhysicalLinks", null, 0, -1, PhysicalLink.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(physicalLinkCategoryEClass, PhysicalLinkCategory.class, "PhysicalLinkCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhysicalLinkCategory_Links(), this.getPhysicalLink(), this.getPhysicalLink_Categories(), "links", null, 0, -1, PhysicalLinkCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2436,28 +2450,28 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEClass(physicalPathEClass, PhysicalPath.class, "PhysicalPath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhysicalPath_InvolvedLinks(), this.getAbstractPhysicalPathLink(), null, "involvedLinks", null, 0, -1, PhysicalPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhysicalPath_OwnedPhysicalPathInvolvements(), this.getPhysicalPathInvolvement(), null, "ownedPhysicalPathInvolvements", null, 0, -1, PhysicalPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPath_FirstPhysicalPathInvolvements(), this.getPhysicalPathInvolvement(), null, "firstPhysicalPathInvolvements", null, 0, -1, PhysicalPath.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPath_FirstPhysicalPathInvolvements(), this.getPhysicalPathInvolvement(), null, "firstPhysicalPathInvolvements", null, 0, -1, PhysicalPath.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPhysicalPath_OwnedPhysicalPathRealizations(), this.getPhysicalPathRealization(), null, "ownedPhysicalPathRealizations", null, 0, -1, PhysicalPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPath_RealizedPhysicalPaths(), this.getPhysicalPath(), null, "realizedPhysicalPaths", null, 0, -1, PhysicalPath.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPath_RealizingPhysicalPaths(), this.getPhysicalPath(), null, "realizingPhysicalPaths", null, 0, -1, PhysicalPath.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPath_RealizedPhysicalPaths(), this.getPhysicalPath(), null, "realizedPhysicalPaths", null, 0, -1, PhysicalPath.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPath_RealizingPhysicalPaths(), this.getPhysicalPath(), null, "realizingPhysicalPaths", null, 0, -1, PhysicalPath.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(physicalPathInvolvementEClass, PhysicalPathInvolvement.class, "PhysicalPathInvolvement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhysicalPathInvolvement_NextInvolvements(), this.getPhysicalPathInvolvement(), null, "nextInvolvements", null, 0, -1, PhysicalPathInvolvement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPathInvolvement_PreviousInvolvements(), this.getPhysicalPathInvolvement(), null, "previousInvolvements", null, 0, -1, PhysicalPathInvolvement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPathInvolvement_InvolvedElement(), this.getAbstractPathInvolvedElement(), null, "involvedElement", null, 0, 1, PhysicalPathInvolvement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPathInvolvement_InvolvedComponent(), this.getComponent(), null, "involvedComponent", null, 0, 1, PhysicalPathInvolvement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPathInvolvement_PreviousInvolvements(), this.getPhysicalPathInvolvement(), null, "previousInvolvements", null, 0, -1, PhysicalPathInvolvement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPathInvolvement_InvolvedElement(), this.getAbstractPathInvolvedElement(), null, "involvedElement", null, 0, 1, PhysicalPathInvolvement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPathInvolvement_InvolvedComponent(), this.getComponent(), null, "involvedComponent", null, 0, 1, PhysicalPathInvolvement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(physicalPathReferenceEClass, PhysicalPathReference.class, "PhysicalPathReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPhysicalPathReference_ReferencedPhysicalPath(), this.getPhysicalPath(), null, "referencedPhysicalPath", null, 0, 1, PhysicalPathReference.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPathReference_ReferencedPhysicalPath(), this.getPhysicalPath(), null, "referencedPhysicalPath", null, 0, 1, PhysicalPathReference.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(physicalPathRealizationEClass, PhysicalPathRealization.class, "PhysicalPathRealization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(physicalPortEClass, PhysicalPort.class, "PhysicalPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhysicalPort_OwnedComponentPortAllocations(), theFaPackage.getComponentPortAllocation(), null, "ownedComponentPortAllocations", null, 0, -1, PhysicalPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhysicalPort_OwnedPhysicalPortRealizations(), this.getPhysicalPortRealization(), null, "ownedPhysicalPortRealizations", null, 0, -1, PhysicalPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPort_AllocatedComponentPorts(), theFaPackage.getComponentPort(), theFaPackage.getComponentPort_AllocatingPhysicalPorts(), "allocatedComponentPorts", null, 0, -1, PhysicalPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPort_RealizedPhysicalPorts(), this.getPhysicalPort(), null, "realizedPhysicalPorts", null, 0, -1, PhysicalPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicalPort_RealizingPhysicalPorts(), this.getPhysicalPort(), null, "realizingPhysicalPorts", null, 0, -1, PhysicalPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPort_AllocatedComponentPorts(), theFaPackage.getComponentPort(), theFaPackage.getComponentPort_AllocatingPhysicalPorts(), "allocatedComponentPorts", null, 0, -1, PhysicalPort.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPort_RealizedPhysicalPorts(), this.getPhysicalPort(), null, "realizedPhysicalPorts", null, 0, -1, PhysicalPort.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicalPort_RealizingPhysicalPorts(), this.getPhysicalPort(), null, "realizingPhysicalPorts", null, 0, -1, PhysicalPort.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(physicalPortRealizationEClass, PhysicalPortRealization.class, "PhysicalPortRealization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

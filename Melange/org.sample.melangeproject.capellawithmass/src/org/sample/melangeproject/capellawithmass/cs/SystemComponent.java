@@ -86,7 +86,7 @@ public interface SystemComponent extends Component, CapabilityRealizationInvolve
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Participations In Capability Realizations</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getSystemComponent_ParticipationsInCapabilityRealizations()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/2007/UML2Mapping umlOppositeReference='supplier' umlOppositeReferenceOwner='Dependency'"
 	 *        annotation="http://www.polarsys.org/capella/2007/BusinessInformation Label='participationsInCapabilityRealizations'"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='(automatically computed) the involvement relationships between this SystemComponent and CapabilityRealization elements\r\n[source: Capella study]' constraints='none' comment/notes='none'"

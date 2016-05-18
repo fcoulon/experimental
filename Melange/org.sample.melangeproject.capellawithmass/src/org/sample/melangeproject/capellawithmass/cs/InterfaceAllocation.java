@@ -38,7 +38,7 @@ public interface InterfaceAllocation extends Allocation {
 	 * @return the value of the '<em>Allocated Interface</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterfaceAllocation_AllocatedInterface()
 	 * @see org.sample.melangeproject.capellawithmass.cs.Interface#getProvisioningInterfaceAllocations
-	 * @model opposite="provisioningInterfaceAllocations" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model opposite="provisioningInterfaceAllocations" required="true" transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='Specifies the allocated interface\r\n[source: Capella study]\r\n\r\nSpecifies the targets of the DirectedRelationship.\r\n[source: UML superstructure v2.2]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
@@ -57,7 +57,7 @@ public interface InterfaceAllocation extends Allocation {
 	 * @return the value of the '<em>Allocating Interface Allocator</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getInterfaceAllocation_AllocatingInterfaceAllocator()
 	 * @see org.sample.melangeproject.capellawithmass.cs.InterfaceAllocator#getProvisionedInterfaceAllocations
-	 * @model opposite="provisionedInterfaceAllocations" required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model opposite="provisionedInterfaceAllocations" required="true" transient="true" changeable="false" derived="true" ordered="false"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='Specifies the allocating interface\r\n[source: Capella study]\r\n\r\nSpecifies the sources of the DirectedRelationship.\r\n[source: UML superstructure v2.2]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated

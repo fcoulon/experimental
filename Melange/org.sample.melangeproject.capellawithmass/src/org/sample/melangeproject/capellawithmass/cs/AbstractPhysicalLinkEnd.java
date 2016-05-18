@@ -36,7 +36,7 @@ public interface AbstractPhysicalLinkEnd extends CapellaElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Involved Links</em>' reference list.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getAbstractPhysicalLinkEnd_InvolvedLinks()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/kitalpha/ecore/documentation description='Physical links that come in or out of this physical port\r\n[source: Capella study]' constraints='none' comment/notes='none'"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='none' constraints='none'"
 	 * @generated

@@ -7,8 +7,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CapellaWithMass -->
       <package
-            uri="http://capellawithmass/requirement/"
-            class="org.sample.melangeproject.capellawithmass.requirement.RequirementPackage"
+            uri="http://capellawithmass/cs/"
+            class="org.sample.melangeproject.capellawithmass.cs.CsPackage"
             genModel="model/CapellaWithMass.genmodel"/>
    </extension>
 
@@ -23,32 +23,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CapellaWithMass -->
       <package
-            uri="http://capellawithmass/ctx/"
-            class="org.sample.melangeproject.capellawithmass.ctx.CtxPackage"
-            genModel="model/CapellaWithMass.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CapellaWithMass -->
-      <package
-            uri="http://capellawithmass/pa/"
-            class="org.sample.melangeproject.capellawithmass.pa.PaPackage"
-            genModel="model/CapellaWithMass.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CapellaWithMass -->
-      <package
-            uri="http://capellawithmass/pa/deployment/"
-            class="org.sample.melangeproject.capellawithmass.pa.deployment.DeploymentPackage"
-            genModel="model/CapellaWithMass.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CapellaWithMass -->
-      <package
-            uri="http://capellawithmass/la/"
-            class="org.sample.melangeproject.capellawithmass.la.LaPackage"
+            uri="http://capellawithmass/capellamodeller/"
+            class="org.sample.melangeproject.capellawithmass.capellamodeller.CapellamodellerPackage"
             genModel="model/CapellaWithMass.genmodel"/>
    </extension>
 
@@ -63,40 +39,16 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CapellaWithMass -->
       <package
-            uri="http://capellawithmass/behavior/"
-            class="org.sample.melangeproject.capellawithmass.behavior.BehaviorPackage"
+            uri="http://capellawithmass/activity/"
+            class="org.sample.melangeproject.capellawithmass.activity.ActivityPackage"
             genModel="model/CapellaWithMass.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CapellaWithMass -->
       <package
-            uri="http://capellawithmass/oa/"
-            class="org.sample.melangeproject.capellawithmass.oa.OaPackage"
-            genModel="model/CapellaWithMass.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CapellaWithMass -->
-      <package
-            uri="http://capellawithmass/cs/"
-            class="org.sample.melangeproject.capellawithmass.cs.CsPackage"
-            genModel="model/CapellaWithMass.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CapellaWithMass -->
-      <package
-            uri="http://capellawithmass/capellacore/"
-            class="org.sample.melangeproject.capellawithmass.capellacore.CapellacorePackage"
-            genModel="model/CapellaWithMass.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CapellaWithMass -->
-      <package
-            uri="http://capellawithmass/interaction/"
-            class="org.sample.melangeproject.capellawithmass.interaction.InteractionPackage"
+            uri="http://capellawithmass/la/"
+            class="org.sample.melangeproject.capellawithmass.la.LaPackage"
             genModel="model/CapellaWithMass.genmodel"/>
    </extension>
 
@@ -135,8 +87,24 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CapellaWithMass -->
       <package
-            uri="http://capellawithmass/activity/"
-            class="org.sample.melangeproject.capellawithmass.activity.ActivityPackage"
+            uri="http://capellawithmass/modellingcore/"
+            class="org.sample.melangeproject.capellawithmass.modellingcore.ModellingcorePackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
+            uri="http://capellawithmass/capellacore/"
+            class="org.sample.melangeproject.capellawithmass.capellacore.CapellacorePackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
+            uri="http://capellawithmass/sharedmodel/"
+            class="org.sample.melangeproject.capellawithmass.sharedmodel.SharedmodelPackage"
             genModel="model/CapellaWithMass.genmodel"/>
    </extension>
 
@@ -151,6 +119,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CapellaWithMass -->
       <package
+            uri="http://capellawithmass/interaction/"
+            class="org.sample.melangeproject.capellawithmass.interaction.InteractionPackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
             uri="http://capellawithmass/fa/"
             class="org.sample.melangeproject.capellawithmass.fa.FaPackage"
             genModel="model/CapellaWithMass.genmodel"/>
@@ -159,8 +135,48 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CapellaWithMass -->
       <package
-            uri="http://capellawithmass/modellingcore/"
-            class="org.sample.melangeproject.capellawithmass.modellingcore.ModellingcorePackage"
+            uri="http://capellawithmass/ctx/"
+            class="org.sample.melangeproject.capellawithmass.ctx.CtxPackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
+            uri="http://capellawithmass/pa/"
+            class="org.sample.melangeproject.capellawithmass.pa.PaPackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
+            uri="http://capellawithmass/pa/deployment/"
+            class="org.sample.melangeproject.capellawithmass.pa.deployment.DeploymentPackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
+            uri="http://capellawithmass/oa/"
+            class="org.sample.melangeproject.capellawithmass.oa.OaPackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
+            uri="http://capellawithmass/requirement/"
+            class="org.sample.melangeproject.capellawithmass.requirement.RequirementPackage"
+            genModel="model/CapellaWithMass.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CapellaWithMass -->
+      <package
+            uri="http://capellawithmass/behavior/"
+            class="org.sample.melangeproject.capellawithmass.behavior.BehaviorPackage"
             genModel="model/CapellaWithMass.genmodel"/>
    </extension>
 </plugin>

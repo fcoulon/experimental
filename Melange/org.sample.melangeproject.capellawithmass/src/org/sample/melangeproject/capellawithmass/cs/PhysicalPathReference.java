@@ -30,7 +30,7 @@ public interface PhysicalPathReference extends PhysicalPathInvolvement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Referenced Physical Path</em>' reference.
 	 * @see org.sample.melangeproject.capellawithmass.cs.CsPackage#getPhysicalPathReference_ReferencedPhysicalPath()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.polarsys.org/capella/MNoE/CapellaLike/Mapping UML/SysML\040semantic\040equivalences='keyword::none' explanation='Derived and transient' constraints='none'"
 	 * @generated
 	 */
